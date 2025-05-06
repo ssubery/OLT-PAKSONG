@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ຄິດໄລ່ໃບບິນສິນຄ້າ</title>
+    <style>
+        body {
+            font-family: 'Phetsarath OT', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-select {
+            margin-bottom: 20px;
+        }
+
+        .product-option {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product-option img {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .product-info {
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            color: #888;
+        }
+
+        .quantity-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-input label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .quantity-input input[type="number"] {
+            width: 120px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            appearance: none;
+            -moz-appearance: textfield;
+        }
+
+        .calculate-button,
+        .print-button {
+            background-color: #008CBA;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .calculate-button:hover,
+        .print-button:hover {
+            background-color: #005f7a;
+        }
+
+        #bill-output {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            white-space: pre-line;
+        }
+*{
+    font-family: phetsarath OT;
+}
+        .keyboard-container {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            background-color: #eee;
+            display: grid;
+            grid-template-columns: repeat(3, 70px);
+            padding: 15px;
+            gap: 8px;
+            border-radius: 10px;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .keyboard-container.active {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .keyboard-button {
+            background-color: #ddd;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .keyboard-button:active {
+            background-color: #ccc;
+        }
+
+        .keyboard-special {
+            grid-column: span 3;
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>ເລືອກສິນຄ້າ ແລະ ຄິດໄລ່ໃບບິນ</h2>
+
+        <div id="product-selection" class="product-select">
+        </div>
+
+        <div class="calculation-area">
+            <h3>ຄິດໄລ່ລາຍການ</h3>
+            <button id="calculateBill" class="calculate-button">ຄິດໄລ່ທັງໝົດ</button>
+            <div id="bill-output"></div>
+            <button id="printBill" class="print-button">ອອກບິນ</button>
+        </div>
+    </div>
+
+    <div id="numberKeyboard" class="keyboard-container">
+        <button class="keyboard-button" data-value="1">1</button>
+        <button class="keyboard-button" data-value="2">2</button>
+        <button class="keyboard-button" data-value="3">3</button>
+        <button class="keyboard-button" data-value="4">4</button>
+        <button class="keyboard-button" data-value="5">5</button>
+        <button class="keyboard-button" data-value="6">6</button>
+        <button class="keyboard-button" data-value="7">7</button>
+        <button class="keyboard-button" data-value="8">8</button>
+        <button class="keyboard-button" data-value="9">9</button>
+        <button class="keyboard-button" data-value="0">0</button>
+        <button class="keyboard-button" data-value="backspace">⌫</button>
+        <button id="keyboardDone" class="keyboard-special">ຕົກລົງ</button>
+    </div>
+
+    <script>
+        const productsData = [
+            { id: 'product1', name: 'ຊາແດງ', price: 30000, image: '/TTTea-Red-Tea.webp' },
+            { id: 'product2', name: 'ຊາຊຽວ', price: 30000, image: '/shutterstock_251566309.webp' },
+            { id: 'product3', name: 'ຊາໃບຫມອ່ນ', price: 25000, image: '/fa6w7b.jpg' },
+            { id: 'product4', name: 'ພິກໄທ', price: 20000, image: '/black_peppercorns_wooden_spoon_19102016.webp' }
+        ];
+
+        const productSelectionDiv = document.getElementById('product-selection');
+        const numberKeyboard = document.getElementById('numberKeyboard');
+        const keyboardDoneButton = document.getElementById('keyboardDone');
+        let activeInput = null;
+
+        productsData.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('product-option');
+
+            const img = document.createElement('img');
+            img.src = product.image;
+            img.alt = product.name;
+            img.onerror = function() { this.src = 'placeholder_image.png'; };
+
+            const infoDiv = document.createElement('div');
+            infoDiv.classList.add('product-info');
+
+            const titleDiv = document.createElement('div');
+            titleDiv.classList.add('product-title');
+            titleDiv.textContent = product.name;
+
+            const priceDiv = document.createElement('div');
+            priceDiv.classList.add('product-price');
+            priceDiv.textContent = `${product.price.toLocaleString()} ກີບ`;
+
+            const quantityDiv = document.createElement('div');
+            quantityDiv.classList.add('quantity-input');
+
+            const label = document.createElement('label');
+            label.setAttribute('for', `quantity-${product.id}`);
+            label.textContent = 'ຈຳນວນ:';
+
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.id = `quantity-${product.id}`;
+            input.value = '0';
+            input.min = '0';
+            input.dataset.price = product.price;
+            input.dataset.name = product.name;
+            input.readOnly = true;
+
+            input.addEventListener('focus', function() {
+                activeInput = this;
+                numberKeyboard.classList.add('active');
+            });
+
+            quantityDiv.appendChild(label);
+            quantityDiv.appendChild(input);
+
+            infoDiv.appendChild(titleDiv);
+            infoDiv.appendChild(priceDiv);
+            infoDiv.appendChild(quantityDiv);
+
+            productDiv.appendChild(img);
+            productDiv.appendChild(infoDiv);
+
+            productSelectionDiv.appendChild(productDiv);
+        });
+
+        numberKeyboard.addEventListener('click', function(event) {
+            if (event.target.classList.contains('keyboard-button')) {
+                const value = event.target.dataset.value;
+                if (activeInput) {
+                    if (value === 'backspace') {
+                        activeInput.value = activeInput.value.slice(0, -1);
+                    } else {
+                        activeInput.value += value;
+                    }
+                }
+            }
+        });
+
+        document.addEventListener('click', function(event) {
+            if (activeInput && !numberKeyboard.contains(event.target) && event.target !== activeInput) {
+                numberKeyboard.classList.remove('active');
+                activeInput.blur();
+                activeInput = null;
+            }
+        });
+
+        keyboardDoneButton.addEventListener('click', function() {
+            numberKeyboard.classList.remove('active');
+            if (activeInput) {
+                activeInput.blur();
+            }
+            activeInput = null;
+        });
+
+        document.getElementById('calculateBill').addEventListener('click', function() {
+            let totalAmount = 0;
+            let billDetails = "ໃບບິນສິນຄ້າ\n--------------------\n";
+            const quantityInputs = document.querySelectorAll('#product-selection input[type="number"]');
+
+            quantityInputs.forEach(input => {
+                const quantity = parseInt(input.value);
+                const price = parseFloat(input.dataset.price);
+                const name = input.dataset.name;
+
+                if (quantity > 0) {
+                    const itemTotal = price * quantity;
+                    totalAmount += itemTotal;
+                    billDetails += `${name} x ${quantity} = ${itemTotal.toLocaleString()} ກີບ\n`;
+                }
+            });
+
+            billDetails += "\nລວມທັງໝົດ: " + totalAmount.toLocaleString() + " ກີບ";
+            document.getElementById('bill-output').innerText = billDetails;
+        });
+
+        document.getElementById('printBill').addEventListener('click', function() {
+            const billText = document.getElementById('bill-output').innerText;
+            if (billText) {
+                const printWindow = window.open('', '_blank');
+                printWindow.document.write(`<pre style="font-family: 'Phetsarath OT', sans-serif;">${billText}</pre>`);
+                printWindow.document.close();
+                printWindow.print();
+            } else {
+                alert("ກະລຸນາຄິດໄລ່ໃບບິນກ່ອນພິມ.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

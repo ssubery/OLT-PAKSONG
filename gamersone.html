@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ສູນເກມນ້ອຍ</title>
+  <!-- ນຳເຂົ້າ font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans Lao', sans-serif;
+      background: linear-gradient(to right, #cce5ff, #e6f0ff);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 25px 30px;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #4CAF50;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px 5px 5px 0;
+      border: none;
+      border-radius: 6px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    input {
+      padding: 8px 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+      }
+
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>ສູນເກມນ້ອຍ Mini Game Center</h1>
+  <button type="button" class="market" style="position: fixed; margin-top: 480px ; font-family: phetsarath OT; margin-left: 1350px;width: 200px; ";><a href="index.html" style="text-decoration: none; color: black; z-index: 1000;" >🏠ກັບສູ່ຫນ້າຫລັກ</a></button>
+
+  <div class="card">
+    <h2>ເກມນັບຄະແນນ (Counter Game)</h2>
+    <p>ກົດປຸ່ມ "Increase" ເພື່ອເພີ່ມຄະແນນທີ່ປາກົດ.</p>
+    <p id="count-display">Count: 0</p>
+    <button onclick="increaseCount()">Increase</button>
+  </div>
+
+  <div class="card">
+    <h2>ເກມທາຍຕົວເລກ (Guess the Number)</h2>
+    <p>ພະຍາຍາມທາຍຕົວເລກລັບລະຫວ່າງ 1 ຫາ 10. ໃສ່ຕົວເລກແລະກົດ "Guess".</p>
+    <input type="number" id="guess-input" placeholder="ໃສ່ຕົວເລກ..." />
+    <button onclick="checkGuess()">Guess</button>
+    <p id="guess-message"></p>
+  </div>
+
+  <div class="card">
+    <h2>ເກມປ່ອຍຍິ້ງຈົບ (Rock Paper Scissors)</h2>
+    <p>ເລືອກ Rock, Paper ຫຼື Scissors ເພື່ອເລ່ນກັບຄອມພິວເຕີ. ຜົນຈະຖືກສະແດງ.</p>
+    <button onclick="playRPS('Rock')">Rock</button>
+    <button onclick="playRPS('Paper')">Paper</button>
+    <button onclick="playRPS('Scissors')">Scissors</button>
+    <p id="rps-result"></p>
+  </div>
+
+  <script>
+    // Counter Game
+    let count = 0;
+    function increaseCount() {
+      count++;
+      document.getElementById('count-display').textContent = 'Count: ' + count;
+    }
+
+    // Guess the Number
+    const secretNumber = Math.floor(Math.random() * 10) + 1;
+    function checkGuess() {
+      const guess = parseInt(document.getElementById('guess-input').value);
+      const message = document.getElementById('guess-message');
+      if (isNaN(guess)) {
+        message.textContent = 'ກະລຸນາໃສ່ຕົວເລກ.';
+        return;
+      }
+      if (guess === secretNumber) {
+        message.textContent = '🎉 ຖືກຕ້ອງ!';
+      } else if (guess > secretNumber) {
+        message.textContent = '🔼 ຫຼາຍເກີນໄປ!';
+      } else {
+        message.textContent = '🔽 ນ້ອຍເກີນໄປ!';
+      }
+    }
+
+    // Rock Paper Scissors
+    function playRPS(userChoice) {
+      const choices = ['Rock', 'Paper', 'Scissors'];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+      let result = '';
+
+      if (userChoice === computerChoice) {
+        result = '🤝 ເທົ່າກັນ!';
+      } else if (
+        (userChoice === 'Rock' && computerChoice === 'Scissors') ||
+        (userChoice === 'Paper' && computerChoice === 'Rock') ||
+        (userChoice === 'Scissors' && computerChoice === 'Paper')
+      ) {
+        result = '🏆 ທ່ານຊະນະ!';
+      } else {
+        result = '😢 ທ່ານແພ້!';
+      }
+
+      document.getElementById('rps-result').textContent =
+        `ທ່ານເລືອກ ${userChoice}, ຄອມພິວເຕີເລືອກ ${computerChoice}. ${result}`;
+    }
+  </script>
+</body>
+</html>

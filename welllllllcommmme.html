@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to OLT Website</title>
+    <style>
+        body {
+            font-family: 'Phetsarath OT', sans-serif; /* Ensure 'Phetsarath OT' is available, or use a fallback */
+            font-size: 45px;
+            font-weight: bolder;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background-image: url('https://th.bing.com/th/id/R.29eece515b4ca63c855c79768eab939f?rik=tHUu%2b0gzPLS3uw&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f220000%2fvelka%2ftea-plantation-1494148592gF1.jpg&ehk=W8MRwCDFK%2bgS2Dd2AQqX%2fePk52BMbaT%2biYccT%2ftI6BE%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* background-position: center; */
+            height: 100vh; /* Make the body take up the full viewport height */
+            display: flex; /* Use flexbox for vertical centering */
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center;/* center horizontally */
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px; /* Add some space below the heading */
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px; /* Add more space between paragraphs and button */
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 15px 25px; /* Increase padding for better button appearance */
+            border-radius: 25px; /* Rounder corners */
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            font-size: 1em; /* Adjust font size within the button */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        a:hover {
+            background-color: #3e8e41; /* Darker green on hover */
+        }
+
+        button {
+            border: none; /* Remove default button border */
+            background: none; /* remove default button background */
+            padding: 0; /* Remove default button padding */
+        }
+body {
+  opacity: 0;
+  transition: opacity 1s ease-in-out; 
+}
+body.loaded {
+  opacity: 1;
+}
+h1,p{
+
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+}
+    </style>
+<script>
+    setTimeout(function() {
+    window.location.href = targetUrl; 
+    }, 2000); 
+    window.onload = function() {
+    document.body.classList.add('loaded');
+    };
+</script>
+</head>
+
+<body>
+    
+    <h1>ຍິນດີຕ້ອນຮັບເຂົ້າສູ່ເວັບຂອງເຮົາ</h1>
+    <p>ນີ້ແມ່ນເວັບທີ່ສ້າງຂື້ນມາເພື່ອໃຫ້ຂໍມູນເພີ່ມເຕີມກ່ຽວກັບຊາ</p>
+    <p>ຂໍໃຫ້ສະຫນຸກສຸກສັນ!</p>
+
+    <button>
+        <a href="welcome2.html">ກົດເພື່ອເບີ່ງຂໍມູນເພີ່ມເຕີມ</a>
+    </button>
+</body>
+
+
+</html>

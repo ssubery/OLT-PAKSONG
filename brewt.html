@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="greentea.css">
+</head>
+<script>
+    function toggleDropdown() {
+        const content = document.getElementById("dropdownContent");
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+    
+    // Optional: hide dropdown when clicking outside
+    window.onclick = function(event) {
+        const dropdown = document.querySelector(".dropdown");
+        const content = document.getElementById("dropdownContent");
+        if (!dropdown.contains(event.target)) {
+            content.style.display = "none";
+        }
+    };
+    </script>
+    
+<body>
+    <header class="site-header" style="background-color: rgb(255, 255, 255);">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">  <img src="LOGO_YARLUEM-removebg-preview.png" alt="" class="imgss"> ສວນຊາ ອົງລອງ</a></div>
+        <nav class="main-navigation">
+            <ul class="tea-navigation">
+                <li><a href="greentea.html" class="tea-nav-link active"><box-icon name='leaf' type='solid'></box-icon>ຊາຊຽວ</a></li>
+                <li><a href="white.html" class="tea-nav-link"><box-icon name='leaf' type='solid'></box-icon>ຊາຂາວ</a></li>
+                <li><a href="red.html" class="tea-nav-link red-tea"><box-icon name='leaf' type='solid'></box-icon>ຊາແດງ</a></li>
+                <li><a href="baimone.html" class="tea-nav-link mulberry-tea"><box-icon name='leaf' type='solid'></box-icon>ຊາໃບມອນ</a></li>
+            </ul>
+            <ul class="site-navigation">
+                <li><a href="product.html" class="nav-link">ການຜະລິດຊາ</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <img src="totoro-transparent.gif" alt="" class="market190" style="right: 0 ; position: fixed; top: 75%;background: transparent;">
+    <div class="dropdown" style="position: fixed; margin-top: 7%; left: 88.5%;">
+        <button onclick="toggleDropdown()">ເພີ່ມເຕີມກ່ຽວກັບສວນຊາ</button>
+        <div class="content" id="dropdownContent">
+            <a href="contact.html">ຂ່າວສານປັດຈຸບັນ</a>
+            <a href="locate.html">ລວມຮູບພາບ ແລະ ທີ່ຕັ້ງ</a>
+            <a href="predent.html">ການປູກຕົ້ນຊາ</a>
+            <a href="brewt.html">ການຊົງຊາ</a>
+            <a href="product.html">ການຜະລິດຊາ</a>
+        </div>
+    </div>
+    <button type="button" class="market" style="position: fixed; margin-top: 30px ; font-family: phetsarath OT; margin-left: 1370px; ";><a href="bill_calculator.html" style="text-decoration: none; color: black; z-index: 1000;" >🫖ສົນໃຈສັ່ງຊື້</a></button>
+
+ <center>
+            <img src="brew.png" alt="" width="80%" style="text-align: center; justify-content: center;justify-self: center;justify-items: center;margin-top: 50px ; border-radius: 10px;" class="rounded">
+   </center>
+   <footer style="
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   padding: 20px;
+   font-size: 0.9em;
+   position: relative;
+   top: 100%;
+   z-index: -1;
+ ">
+       <p>ສະຖານທີ່: ບ້ານຫຼັກ 33, ເມືອງປາກຊ່ອງ, ແຂວງຈຳປາສັກ</p>
+   </footer>
+</body>
+</html>

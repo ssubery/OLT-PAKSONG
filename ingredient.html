@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ຊາ ອົງລອງ - ສຳຫຼວດຊາຂອງພວກເຮົາ</title>
+    <style>
+  body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        header h1 a {
+            text-decoration: none;
+            font-weight: bolder;
+            color: inherit;
+        }
+
+        .imgss {
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        nav {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column; /* Stack links on smaller screens */
+            align-items: center;
+        }
+
+        nav a {
+            display: block; /* Make each link take full width on smaller screens */
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px 0; /* Add some vertical margin */
+            width: 100%; /* Full width for small screens */
+            text-align: center;
+        }
+
+        .ssss1 {
+            background-color: #d4edda;
+        }
+
+        .ssss2 {
+            background-color: #f8f9fa;
+        }
+
+        .ssss3 {
+            background-color: #fdecea;
+        }
+
+        .ssss4 {
+            background-color: #fff3cd;
+        }
+
+        nav a box-icon {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .btn-son {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+        }
+
+        .market {
+            background-color: #ffc107;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Phetsarath OT';
+            font-size: 1em;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            font-weight: bolder;
+            margin-left: 0;
+            font-family: 'Phetsarath OT';
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        section ul {
+            list-style: none;
+            padding: 0;
+            margin-left: 0;
+        }
+
+        section ul li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #eee;
+        }
+
+        section ul li:last-child {
+            border-bottom: none;
+        }
+
+        section ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        section ul li.red a {
+            color: #dc3545;
+        }
+
+        .ongpic {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .locate button,
+        .ingre button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block; /* Make buttons full width on small screens */
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .locate button a,
+        .ingre button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #343a40;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        /* Styles for larger screens (laptops) */
+        @media (min-width: 768px) {
+            header {
+                padding: 20px 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav {
+                margin-top: 0;
+                flex-direction: row; /* Display links horizontally on larger screens */
+                justify-content: center;
+                align-items: center;
+            }
+
+            nav a {
+                display: inline-block; /* Allow horizontal layout */
+                padding: 10px 20px;
+                margin: 0 10px;
+                width: auto; /* Adjust width based on content */
+                text-align: left; /* Reset text alignment */
+            }
+
+            .btn-son {
+                position: static;
+                transform: none;
+                text-align: right;
+                margin-top: 20px;
+            }
+
+            .market {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: auto; /* Adjust width */
+                display: inline-block;
+            }
+
+            section {
+                padding: 30px;
+                margin: 20px auto;
+                max-width: 960px;
+            }
+
+            section h2 {
+                margin-left: 0;
+                font-size: 1.8em;
+            }
+
+            .locate button,
+            .ingre button {
+                display: inline-block; /* Allow side-by-side if needed */
+                width: auto;
+                margin-right: 10px;
+                margin-bottom: 0;
+            }
+        }
+    </style>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="welcome2.css">
+</head>
+
+<body>
+    <header style="position: sticky;">
+        <h1 ><a href="welcome2.html" style="text-decoration: none;">ສວນຊາ ອົງລອງ</a></h1>
+        <nav>
+            <a href="greentea.html" style="color: #2ecc71;" class="ssss1"><box-icon name='leaf' type='solid'
+                    style='color: #2ecc71;'></box-icon>ຊາຊຽວ</a>
+            <a href="ຊາຂາວ.html" style="color: #000000;" class="ssss2"><box-icon name='leaf' type='solid'
+                    style='color: #ffffff;'></box-icon>ຊາຂາວ</a>
+            <a href="" style="color: #e74c3c;" class="ssss3"><box-icon name='leaf' type='solid'
+                    style='color: #e74c3c;'></box-icon>ຊາແດງ</a>
+            <a href="" style="color: #f39c12;" class="ssss4"><box-icon name='leaf' type='solid'
+                    style='color: #f39c12;'></box-icon>ຊາໃບມອນ</a>
+        </nav>
+    </header>
+    <div class="btn-son">
+        <button type="button" class="market"><a href="">ສົນໃຈສັ່ງຊື້</a></button>
+    </div>
+  
+
+   
+
+    <section>
+        <h2>ປະໂຫຍດຂອງຊາ</h2>
+        <p>ການດື່ມຊານັ້ນມີປະໂຫຍດຫຼາຍຢ່າງຕໍ່ສຸຂະພາບ, ດັ່ງທີ່ໄດ້ກ່າວໄວ້ໃນໜ້າເວັບຂອງທ່ານ:
+
+            ຊ່ວຍລົດໂອກາດການເປັນມະເລັງ: ຊາມີສານຕ້ານອະນຸມູນອິດສະຫຼະສູງ ເຊິ່ງອາດຊ່ວຍປ້ອງກັນຄວາມເສຍຫາຍຂອງເຊລ ແລະຫຼຸດຄວາມສ່ຽງຂອງການເປັນມະເລັງບາງຊະນິດ.
+            ຊ່ວຍໃນການທຳງານຂອງລະບົບປະສາດ ແລະ ສະໝອງ: ຊາມີຄາເຟອີນໃນປະລິມານທີ່ເໝາະສົມ ເຊິ່ງສາມາດຊ່ວຍເພີ່ມຄວາມຕື່ນຕົວ, ປັບປຸງສະມາທິ, ແລະເພີ່ມປະສິດທິພາບການເຮັດວຽກຂອງສະໝອງ. ນອກຈາກນີ້, ຍັງມີສານ L-theanine ທີ່ຊ່ວຍໃຫ້ເກີດຄວາມຜ່ອນຄາຍໂດຍບໍ່ເຮັດໃຫ້ງ່ວງຊຶມ.
+            ເຮັດໃຫ້ບໍ່ສ່ຽງຕໍ່ໂລກຫົວໃຈ: ສານຕ້ານອະນຸມູນອິດສະຫຼະໃນຊາສາມາດຊ່ວຍຫຼຸດລະດັບຄໍເລສເຕີລອນທີ່ບໍ່ດີ (LDL) ແລະຄວາມດັນເລືອດ, ເຊິ່ງເປັນປັດໄຈສ່ຽງຂອງການເກີດໂລກຫົວໃຈ.
+            ຊ່ວຍໃນການລົດນ້ຳໜັກ: ຊາບາງຊະນິດເຊັ່ນຊາຂຽວ ມີສານທີ່ຊ່ວຍເພີ່ມການເຜົາຜານພະລັງງານ ແລະໄຂມັນໃນຮ່າງກາຍ, ເຊິ່ງອາດເປັນປະໂຫຍດສຳລັບການຄວບຄຸມນ້ຳໜັກ.
+            ນອກຈາກປະໂຫຍດເຫຼົ່ານີ້ແລ້ວ, ການດື່ມຊາຍັງສາມາດຊ່ວຍໃນເລື່ອງອື່ນໆໄດ້ອີກເຊັ່ນ:
+            
+            ຊ່ວຍເສີມສ້າງລະບົບພູມຄຸ້ມກັນ: ສານຕ້ານອະນຸມູນອິດສະຫຼະ ແລະສານປະກອບອື່ນໆ ໃນຊາອາດຊ່ວຍເສີມສ້າງຄວາມແຂງແຮງໃຫ້ແກ່ລະບົບພູມຄຸ້ມກັນຂອງຮ່າງກາຍ.
+            ຊ່ວຍໃນການຍ່ອຍອາຫານ: ຊາບາງຊະນິດອາດຊ່ວຍບັນເທົາອາການທ້ອງອືດທ້ອງເຟີ້ ແລະຊ່ວຍໃຫ້ລະບົບຍ່ອຍອາຫານເຮັດວຽກໄດ້ດີຂຶ້ນ.
+            ຊ່ວຍໃຫ້ຜ່ອນຄາຍ: ການດື່ມຊາອຸ່ນໆ ສາມາດຊ່ວຍໃຫ້ຮ່າງກາຍແລະຈິດໃຈຜ່ອນຄາຍໄດ້.
+            ຄວນຈື່ໄວ້ວ່າປະລິມານການດື່ມຊາທີ່ເໝາະສົມ ແລະປະເພດຂອງຊາອາດມີຜົນຕໍ່ສຸຂະພາບທີ່ແຕກຕ່າງກັນ.
+        
+        </p>
+        <p> <b>ສະຫລຸບແລ້ວ :</b>ການດື່ມຊານັ້ນກໍຖືວ່າເປັນການ ຮັກສາ ສຸຂະພາບຢ່າງໜື່ງເລີຍກໍ່ວ່າໄດ້ ເພາະ ມີຄຸນນະປະໂຫຍດ ຊ່ວຍໃນຫຼາຍດ້ານເຊັ່ນ:
+            ການຊ່ວຍໃນການລົດໂອກາດ ການເປັນມະເລັງ, ຊ່ວຍໃນການທຳງານຂອງລະບົບປະສາດແລະສະໝອງ,
+            ເຮັດໃຫ້ບໍ່ສ່ຽງຕໍ່ໂລກຫົວໃຈ ແລະ ມີສ່ວນຊ່ວຍຫຼາຍໃນການລົດນ້ຳໜັກ.</p>
+    </section>
+
+ -
+
+    <footer>
+        <p>ສະຖານທີ່: ບ້ານຫຼັກ 33, ເມືອງປາກຊ່ອງ, ແຂວງຈຳປາສັກ</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (Your existing styles) ... */
+
+        body {
+            justify-self: center;
+            font-family: sans-serif;
+            /* Choose a suitable font */
+            margin: 0;
+            padding: 0;
+            background-color: #1e272e;
+            /* Dark background color */
+            color: #fff;
+            /* White text color */
+            line-height: 1.6;
+            background-image: url(fesfef.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            /* To prevent scrollbars when image moves */
+        }
+
+        header {
+            background-color: #2c3e50;
+            /* Darker header background */
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+            /* Highlight color on hover */
+        }
+
+        .hero {
+            padding: 80px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Center content horizontally */
+            gap: 60px;
+            /* Space between text and image */
+            position: relative;
+            /* For absolute positioning of children */
+        }
+
+        .hero-content {
+            flex: 1;
+            text-align: left;
+            /* Align text to the left */
+            transition: opacity 0.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5em;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .hero .description {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button.primary {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .button.primary:hover {
+            background-color: #2980b9;
+        }
+
+        .button.secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .button.secondary:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            /* Center the image container */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hero-image img {
+            width: 300px;
+            /* Adjust size as needed */
+            height: 300px;
+            border-radius: 50%;
+            /* Make it circular */
+            object-fit: cover;
+            /* Ensure the image fills the circle without distortion */
+            border: 5px solid #3498db;
+            /* Optional border */
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            /* Or relative depending on your layout needs */
+            bottom: 0;
+            width: 100%;
+        }
+
+        body {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        .contact-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(100%, -50%);
+            /* Initially positioned to the right */
+            opacity: 0;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.2em;
+        }
+
+        .contact-info.active {
+            transform: translate(0, -50%);
+            /* Move to the center */
+            opacity: 1;
+        }
+
+        .contact-info svg {
+            width: 30px;
+            height: 30px;
+            fill: #fff;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Media Queries for Responsiveness */
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            .logo {
+                font-size: 1.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: 100%;
+                /* Full width on mobile */
+                margin-bottom: 10px;
+            }
+
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .contact-info {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center;    /* Center items horizontally */
+                font-size: 1em;
+                transform: translate(-50%, -50%); /* Center properly */
+                left: 50%;
+                top: 50%;
+            }
+
+            .contact-details {
+                align-items: center; /* Center contact items */
+            }
+
+            footer {
+                padding: 10px;
+                font-size: 0.8em;
+            }
+        }
+        .dropdown {
+        display: inline-block;
+    }
+
+    .dropdown button {
+        background-color: hsl(0, 0%, 80%);
+        color: rgb(0, 0, 0);
+        padding: 10px 15px;
+        border: none;
+        font-weight: bold;
+        border-radius: 5px;
+        font-family: phetsarath OT;
+        cursor: pointer;
+    }
+.ssss{
+    display: flex;
+    height: 470px;
+    width: 715px;
+    gap: 10px;
+    border-color: snow;
+    border: solid snow;
+}
+    .dropdown a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 10px 15px;
+    }
+
+    .dropdown .content {
+        display: none;
+        background-color: hsl(0, 0%, 95%);
+        min-width: 100px;
+        box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+    }
+
+  
+
+    .dropdown:hover button {
+        background-color: hsl(0, 0%, 70%);
+    }
+
+    .dropdown a:hover {
+        background-color: hsl(0, 0%, 90%);
+
+    }
+
+    </style>
+    <script>
+        window.onload = function () {
+            document.body.classList.add('loaded');
+        };
+
+        function tra() {
+            const heroContent = document.getElementById("kiss");
+            const heroImage = document.querySelector(".hero-image");
+            const contactInfo = document.querySelector(".contact-info");
+
+            heroContent.style.opacity = '0';
+            setTimeout(() => {
+                heroContent.style.display = 'none';
+            }, 500);
+
+            heroImage.style.transform = 'translateX(-350px)';
+            contactInfo.classList.add('active');
+        }
+    </script>
+</head>
+<script>
+    function toggleDropdown() {
+        const content = document.getElementById("dropdownContent");
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+    
+    // Optional: hide dropdown when clicking outside
+    window.onclick = function(event) {
+        const dropdown = document.querySelector(".dropdown");
+        const content = document.getElementById("dropdownContent");
+        if (!dropdown.contains(event.target)) {
+            content.style.display = "none";
+        }
+    };
+    </script>
+<body>
+    <header>
+        <div class="logo">SONEXAY</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="inpiut.html">Login</a></li>
+                <li onclick="tra()"><a >Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content" id="kiss">
+            <h1>Hi! I Am SONE XAY VVP</h1>
+            <p class="subtitle">Frontend Developer</p>
+            <p class="description">Hello! My Name is Sonexay. I am From laos. I am Also The student of BCT College for Software Engineering. And A Frontend Website Developer.</p>
+            <div class="hero-buttons">
+                <a href="welllllllcommmme.html" class="button primary">My Project</a>
+                <a href="#" class="button secondary " onclick="tra()">Let's Talk</a>
+                <div class="dropdown" style="position: fixed; margin-top: 5%; left: 2%;">
+                    <button onclick="toggleDropdown()" style="background-color: rgb(65, 225, 65);box-shadow:  2px 2px 1px 1px  white;">ເວັບສ້າງຫລີ້ນໆ ເວລາເຫລືອ</button>
+                    <div class="content" id="dropdownContent" style="font-family: phetsarath OT;">
+                      
+                        <a href="gamersone.html">ເວັບເກມ</a>
+                        <a href="calculator.html">ເວັບຈັກຄິດໄລ່</a>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="/WhatsApp Image 2025-04-06 at 16.40.44_6daf4425.jpg" alt="Your Profile" id="img112">
+        </div>
+        <div class="contact-info" style="font-weight: bolder; font-size: 900; margin-right: 100px;">
+            <div class="contact-details" id="content222">
+                <div class="contact-item">
+                  <img src="whatthe.png" alt="" width="30" height="30" fill="currentColor"
+                  class="bi bi-envelope" viewBox="0 0 16 16" style="color: green; background-color: green;">
+                    <span>02091552398</span>
+                </div>
+                <div class="contact-item">
+                    <img src="gmailme.jpg" alt="" width="30" height="30" fill="currentColor"
+                    class="bi bi-envelope" viewBox="0 0 16 16" style="color: green; background-color: green;" >
+             
+                       
+                    <span>sonexayvongphanh@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                   <img src="images (1).jpeg" alt="" width="30" height="30" fill="currentColor"
+                   class="bi bi-envelope" viewBox="0 0 16 16" style="color: green; background-color: green;" >
+            <span><a href="https://www.google.com/maps/place/%E0%BA%AA%E0%BA%A7%E0%BA%99%E0%BA%8A%E0%BA%B2-%E0%BA%81%E0%BA%B2%E0%BB%80%E0%BA%9F%E0%BA%AD%E0%BA%BB%E0%BA%87%E0%BA%A5%E0%BB%8B%E0%BA%AD%E0%BA%87/@15.1752351,106.0581255,13z/data=!4m6!3m5!1s0x3114e1f246eaf373:0xfbd3b5e731a15b98!8m2!3d15.1754196!4d106.0738015!16s%2Fg%2F11c6wtz313?entry=ttu&g_ep=EgoyMDI1MDQyNy4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" style="list-style: none; text-decoration: none;">Ong Long Tea adress</a></span>

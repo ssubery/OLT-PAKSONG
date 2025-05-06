@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ຊາ ອົງລອງ - ສຳຫຼວດຊາຂອງພວກເຮົາ</title>
+    <style>
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lab(79.48% 1.36 0.47);
+    color: gold;    
+    line-height: 1.6; /* Improve readability */
+}
+
+header {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex; /* Enable flexbox for header */
+    justify-content: space-between; /* Space out logo and nav */
+    align-items: center; /* Vertically align items */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.2em; /* Adjust font size for smaller screens */
+}
+
+header h1 a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: inherit;
+    display: flex; /* Align image and text */
+    align-items: center;
+}
+
+.imgss {
+    height: 30px; /* Adjust image size for smaller screens */
+    vertical-align: middle;
+    margin-right: 5px; /* Adjust spacing */
+}
+
+nav {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column; /* Stack links on smaller screens */
+    align-items: center;
+}
+
+nav a {
+    display: block; /* Make each link take full width on smaller screens */
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px 0; /* Add some vertical margin */
+    width: 100%; /* Full width for small screens */
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.ssss1 {
+    background-color: #d4edda;
+    color: #155724; /* Adjust text color for better contrast */
+}
+
+.ssss2 {
+    background-color: #f8f9fa;
+    color: #343a40; /* Adjust text color for better contrast */
+}
+
+.ssss3 {
+    background-color: #fdecea;
+    color: #721c24; /* Adjust text color for better contrast */
+}
+
+.ssss4 {
+    background-color: #fff3cd;
+    color: #856404; /* Adjust text color for better contrast */
+}
+
+nav a box-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.btn-son {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+}
+
+.market {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Phetsarath OT', sans-serif; /* Ensure font is applied */
+    font-size: 0.9em; /* Adjust font size for smaller screens */
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: gold;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    font-weight: bolder;
+    margin-left: 0;
+    font-family: 'Phetsarath OT', sans-serif; /* Ensure font is applied */
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.3em; /* Adjust heading size for smaller screens */
+}
+
+section p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-size: 0.95em; /* Adjust paragraph size for smaller screens */
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+}
+
+section ul li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+    font-size: 0.95em; /* Adjust list item size for smaller screens */
+}
+
+section ul li:last-child {
+    border-bottom: none;
+}
+
+section ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+section ul li.red a {
+    color: #dc3545;
+}
+
+.ongpic {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.locate button,
+.ingre button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block; /* Make buttons full width on small screens */
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.locate button a,
+.ingre button a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40;
+    color: white;
+    font-size: 0.8em; /* Adjust footer size for smaller screens */
+}
+
+/* Styles for larger screens (laptops) */
+@media (min-width: 768px) {
+    header {
+        padding: 20px 30px;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .imgss {
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    nav {
+        margin-top: 0;
+        flex-direction: row; /* Display links horizontally on larger screens */
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav a {
+        display: inline-block; /* Allow horizontal layout */
+        padding: 10px 20px;
+        margin: 0 10px;
+        width: auto; /* Adjust width based on content */
+        text-align: left; /* Reset text alignment */
+    }
+
+    .btn-son {
+        position: static;
+        transform: none;
+        text-align: right;
+        margin-top: 20px;
+    }
+
+    .market {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: auto; /* Adjust width */
+        display: inline-block;
+        font-size: 1em;
+    }
+
+    section {
+        padding: 30px;
+        margin: 20px auto;
+        max-width: 960px;
+    }
+
+    section h2 {
+        margin-left: 0;
+        font-size: 1.6em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+
+    section ul li {
+        font-size: 1em;
+    }
+
+    .locate button,
+    .ingre button {
+        display: inline-block; /* Allow side-by-side */
+        width: auto;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+}
+
+/* Optional: Further adjustments for larger desktops */
+@media (min-width: 1200px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        padding: 12px 25px;
+        margin: 0 15px;
+        font-size: 1.1em;
+    }
+
+    section {
+        max-width: 1140px;
+        padding: 40px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    section p {
+        font-size: 1.1em;
+    }
+
+    section ul li {
+        font-size: 1.1em;
+    }
+}
+
+
+.dropdown{
+    display: inline-block;
+} 
+ .dropdown button{
+    background-color: hsl(0, 0%, 80%);
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: phetsarath OT;
+    cursor: pointer; } 
+
+.dropdown a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.dropdown .content{
+    display: none;
+      background-color: hsl(0, 0%, 95%);
+    min-width: 100px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+}
+
+
+.dropdown:hover button{
+    background-color: hsl(0, 0%, 70%);
+}
+.dropdown a:hover{
+    background-color: hsl(0, 0%, 90%);
+
+}
+*{
+    font-family: phetsarath OT;
+}
+    </style>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="welcome2.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<script>
+    function toggleDropdown() {
+        const content = document.getElementById("dropdownContent");
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+    
+    // Optional: hide dropdown when clicking outside
+    window.onclick = function(event) {
+        const dropdown = document.querySelector(".dropdown");
+        const content = document.getElementById("dropdownContent");
+        if (!dropdown.contains(event.target)) {
+            content.style.display = "none";
+        }
+    };
+    </script>
+    
+<body>
+    <header style="position: sticky;">
+        <h1 ><a href="index.html" style="text-decoration: none; font-weight: bolder;"> <img src="LOGO_YARLUEM-removebg-preview.png" alt="" class="imgss"> ສວນຊາ ອົງລອງ</a></h1>
+        <nav>
+            <a href="greentea.html" style="color: #2ecc71;" class="ssss1"><img src="green-tea (1).png" alt="" width="30">ຊາຊຽວ</a>
+            <a href="white.html" style="color: #000000;" class="ssss2"><img src="tea-leaf.png" alt="" width="30">ຊາຂາວ</a>
+            <a href="red.html" style="color: #e74c3c;" class="ssss3"><img src="orange.png" alt="" width="30">ຊາແດງ</a>
+            <a href="baimone.html" style="color: #f39c12;" class="ssss4"><img src="berry.png" alt="" width="30">ຊາໃບມອນ</a>
+        </nav>
+    </header>
+ 
+ 
+    <div class="dropdown" style="position: fixed; margin-top: 5%; left:88%;">
+        <button onclick="toggleDropdown()" style="background-color: orange;">ເພີ່ມເຕີມກ່ຽວກັບສວນຊາ</button>
+        <div class="content" id="dropdownContent">
+            <a href="contact.html">ຂ່າວສານປັດຈຸບັນ</a>
+            <a href="locate.html">ລວມຮູບພາບ ແລະ ທີ່ຕັ້ງ</a>
+            <a href="predent.html">ການປູກຕົ້ນຊາ</a>
+            <a href="brewt.html">ການຊົງຊາ</a>
+            <a href="product.html">ການຜະລິດຊາ</a>
+        </div>
+    </div>
+    <img src="totoro-transparent.gif" alt="" class="market190" style="right: 0 ; position: fixed; top: 75%;background: transparent; width: 70px;">
+    <div class="btn-son">
+        <button type="button" class="market" style="position: fixed;"><a href="bill_calculator.html" style="text-decoration: none; color: black ; font-family: phetsarath OT;">🫖ສົນໃຈສັ່ງຊື້</a></button>
+    </div>
+    <section class="mt-5">
+        <h2 style="font-weight: bolder; margin-left: 10px; font-family: phetsarath OT;"><i class="bi bi-chat-left-heart-fill "></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+          </svg> ຄວາມເປັນມາຂອງຊາ</h2>
+        <p>ຊາເປັນເຄື່ອງດື່ມທີ່ມີປະຫວັດສາດ ຍາວນານ ມີຈຸດ ກຳເນິດຈາກປະເທດຈີນ ຄາດວ່າຫນ້າຈະເກີນກວ່າ 5000 ປີ ແລະ
+            ສືບສ້າງທົດລອງປັບປຸງມາ ຈົນເຖີງຍຸກປັດຈຸບັນ ຕອນນີ້ຊາຍັງໄດ້ກາຍເປັນສ່ວນໜື່ງຂອງວັດທະນາທຳຂອງຫຼາຍປະເທດທົ່ວໂລກ.</p><br>
+            <img src="/WhatsApp Image 2025-04-06 at 17.45.06_59e6338b.jpg" alt="" class="ongpic">
+            <br><p>ນີ່ແມ່ນຮູບ ຂອງ ພໍ່ເຖົ້າ ແລະ ແມ່ເຖົ້າຂອງຂອງໃນຫລາຍປີກ່ອນ ໃນຊ່ວງປີ 2000+- ທ່ານເປັນຜູ້ບຸກເບິີກການກະຊິກຳດ້ານກະເຟ ແລະ ຊາ ໃນປາກຊ່ອງເລີ່ມຕັ້ງແຕ່ຊ່ວງປົດປ່ອຍໃຫມ່ໆ ເຊີ່ງປັດຈຸບັນແມ່ນໄດ້ມໍລະນະພາບແລ້ວໃນຊ່ວງກ່ອນໂຄວິດ 2 ປີ ກໍ່ຄື ປີ 2017 (ແມ່ເຖົ້າ) ສ່ວນພໍ່ເຖົ້ານັ້ນ ແມ່ນ ປີ 2016    </p>
+    </section>
+
+    <section>
+        <h2 style="font-weight: bolder; margin-left: 10px; font-family: phetsarath OT;"><i class="bi bi-chat-left-heart-fill "></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+          </svg> ປະເພດຂອງຊາ</h2>
+        <p>ສຳຫຼວດຊາຂອງພວກເຮົາ:</p>
+        <ul style="margin-left: 10px;">
+            <li><a href="greentea.html">ຊາຊຽວ</a> (ມີໃນສະຕັອກ)</li>
+            <li><a href="white.html">ຊາຂາວ</a> (ມີໃນສະຕັອກ)</li>
+            <li><a href="red.html">ຊາແດງ</a> (ມີໃນສະຕັອກ)</li>
+            <li class="red"><a href="baimone.html">ຊາໃບມອນ</a> (ໝົດສະຕັອກ)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 style="font-weight: bolder; margin-left: 10px; font-family: phetsarath OT;"><i class="bi bi-chat-left-heart-fill "></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+          </svg> ປະໂຫຍດຂອງຊາ</h2>
+        <p>ການດື່ມຊານັ້ນມີປະໂຫຍດຫຼາຍຢ່າງຕໍ່ສຸຂະພາບ, ດັ່ງທີ່ໄດ້ກ່າວໄວ້ໃນໜ້າເວັບຂອງທ່ານ:
+
+            ຊ່ວຍລົດໂອກາດການເປັນມະເລັງ: ຊາມີສານຕ້ານອະນຸມູນອິດສະຫຼະສູງ ເຊິ່ງອາດຊ່ວຍປ້ອງກັນຄວາມເສຍຫາຍຂອງເຊລ ແລະຫຼຸດຄວາມສ່ຽງຂອງການເປັນມະເລັງບາງຊະນິດ.
+            ຊ່ວຍໃນການທຳງານຂອງລະບົບປະສາດ ແລະ ສະໝອງ: ຊາມີຄາເຟອີນໃນປະລິມານທີ່ເໝາະສົມ ເຊິ່ງສາມາດຊ່ວຍເພີ່ມຄວາມຕື່ນຕົວ, ປັບປຸງສະມາທິ, ແລະເພີ່ມປະສິດທິພາບການເຮັດວຽກຂອງສະໝອງ. ນອກຈາກນີ້, ຍັງມີສານ L-theanine ທີ່ຊ່ວຍໃຫ້ເກີດຄວາມຜ່ອນຄາຍໂດຍບໍ່ເຮັດໃຫ້ງ່ວງຊຶມ.
+            ເຮັດໃຫ້ບໍ່ສ່ຽງຕໍ່ໂລກຫົວໃຈ: ສານຕ້ານອະນຸມູນອິດສະຫຼະໃນຊາສາມາດຊ່ວຍຫຼຸດລະດັບຄໍເລສເຕີລອນທີ່ບໍ່ດີ (LDL) ແລະຄວາມດັນເລືອດ, ເຊິ່ງເປັນປັດໄຈສ່ຽງຂອງການເກີດໂລກຫົວໃຈ.
+            ຊ່ວຍໃນການລົດນ້ຳໜັກ: ຊາບາງຊະນິດເຊັ່ນຊາຂຽວ ມີສານທີ່ຊ່ວຍເພີ່ມການເຜົາຜານພະລັງງານ ແລະໄຂມັນໃນຮ່າງກາຍ, ເຊິ່ງອາດເປັນປະໂຫຍດສຳລັບການຄວບຄຸມນ້ຳໜັກ.
+            ນອກຈາກປະໂຫຍດເຫຼົ່ານີ້ແລ້ວ, ການດື່ມຊາຍັງສາມາດຊ່ວຍໃນເລື່ອງອື່ນໆໄດ້ອີກເຊັ່ນ:
+            
+            ຊ່ວຍເສີມສ້າງລະບົບພູມຄຸ້ມກັນ: ສານຕ້ານອະນຸມູນອິດສະຫຼະ ແລະສານປະກອບອື່ນໆ ໃນຊາອາດຊ່ວຍເສີມສ້າງຄວາມແຂງແຮງໃຫ້ແກ່ລະບົບພູມຄຸ້ມກັນຂອງຮ່າງກາຍ.
+            ຊ່ວຍໃນການຍ່ອຍອາຫານ: ຊາບາງຊະນິດອາດຊ່ວຍບັນເທົາອາການທ້ອງອືດທ້ອງເຟີ້ ແລະຊ່ວຍໃຫ້ລະບົບຍ່ອຍອາຫານເຮັດວຽກໄດ້ດີຂຶ້ນ.
+            ຊ່ວຍໃຫ້ຜ່ອນຄາຍ: ການດື່ມຊາອຸ່ນໆ ສາມາດຊ່ວຍໃຫ້ຮ່າງກາຍແລະຈິດໃຈຜ່ອນຄາຍໄດ້.
+            ຄວນຈື່ໄວ້ວ່າປະລິມານການດື່ມຊາທີ່ເໝາະສົມ ແລະປະເພດຂອງຊາອາດມີຜົນຕໍ່ສຸຂະພາບທີ່ແຕກຕ່າງກັນ.
+        
+        </p>
+        <p> <b>ສະຫລຸບແລ້ວ :</b>ການດື່ມຊານັ້ນກໍຖືວ່າເປັນການ ຮັກສາ ສຸຂະພາບຢ່າງໜື່ງເລີຍກໍ່ວ່າໄດ້ ເພາະ ມີຄຸນນະປະໂຫຍດ ຊ່ວຍໃນຫຼາຍດ້ານເຊັ່ນ:
+            ການຊ່ວຍໃນການລົດໂອກາດ ການເປັນມະເລັງ, ຊ່ວຍໃນການທຳງານຂອງລະບົບປະສາດແລະສະໝອງ,
+            ເຮັດໃຫ້ບໍ່ສ່ຽງຕໍ່ໂລກຫົວໃຈ ແລະ ມີສ່ວນຊ່ວຍຫຼາຍໃນການລົດນ້ຳໜັກ.</p>
+    </section>
+
+    <section>
+        <h2 style="font-weight: bolder; margin-left: 10px; font-family: phetsarath OT;"><i class="bi bi-chat-left-heart-fill "></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+          </svg> ສະຖານທີ່</h2>
+        <p>ພວກເຮົາຕັ້ງຢູ່ ບ້ານຫຼັກ 33, ເມືອງປາກຊ່ອງ, ແຂວງຈຳປາສັກ.</p>
+        <div class="locate">
+    <button type="button"><a href="https://www.google.com/maps/place/%E0%BA%AA%E0%BA%A7%E0%BA%99%E0%BA%8A%E0%BA%B2-%E0%BA%81%E0%BA%B2%E0%BB%80%E0%BA%9F%E0%BA%AD%E0%BA%BB%E0%BA%87%E0%BA%A5%E0%BB%8B%E0%BA%AD%E0%BA%87/@15.1739956,106.070943,16.5z/data=!4m6!3m5!1s0x3114e1f246eaf373:0xfbd3b5e731a15b98!8m2!3d15.1754196!4d106.0738015!16s%2Fg%2F11c6wtz313?hl=kk&entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D">Google Map</a></button>
+   </div> </section>
+    <section>
+        <h2 style="font-weight: bolder; margin-left: 10px; font-family: phetsarath OT;"><i class="bi bi-chat-left-heart-fill "></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+          </svg> <a href="product.html">ສົນໃຈຂະບວນການຜະລິດ</a></h2>
+        <p>ໃນນີ້ເຮົາຈະບໍ່ສາມາດເປີດເຜີຍສູດທັ້ງຫມົດໄດ້ເນື່ອງດ້ວຍເປັນຄວາມລັບທາງແບຮນ</p>
+        <div class="ingre">
+            <button type="button"> <a href="product.html">ກົດເພື່ອເບີ່ງ</a></button>
+   </div> </section>
+
+    <section>
+        <h2 style="font-weight: bolder; margin-left: 10px; font-family: phetsarath OT;"><i class="bi bi-chat-left-heart-fill "></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+          </svg> ເລື່ອງລາວຂອງຊາ ອົງລອງ</h2>
+        <p>ການເດີນທາງຂອງຊາຂອງພວກເຮົາເລີ່ມຕົ້ນຫຼັງຈາກການປົດປ່ອຍປະເທດລາວ, ປະມານປີ 1976-1980,
+            ເລີ່ມຕົ້ນໂດຍ ດວງ ວັນລອງ, ຜູ້ອົບພະຍົບຊາວຫວຽດນາມ. ຄວາມຮູ້ຂອງລາວຈາກການເຮັດວຽກກ່ຽວກັບຊາໃນຊ່ວງການປົກຄອງຂອງຝຣັ່ງ
+            ເຮັດໃຫ້ເກີດຊາ ອົງລອງ ໃນເມືອງປາກຊ່ອງ.</p>
+    </section>
+
+    <footer>
+        <p>ສະຖານທີ່: ບ້ານຫຼັກ 33, ເມືອງປາກຊ່ອງ, ແຂວງຈຳປາສັກ</p>
+    </footer>
+</body>
+
+</html>

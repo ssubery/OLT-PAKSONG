@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="greentea.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap5/icon/font/bootstrap-icons.min.css">
+    <script src="bootstrap5/js/bootstrap.bundle.min.js">
+    </script>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    .dropdown {
+        display: inline-block;
+    }
+
+    .dropdown button {
+        background-color: hsl(0, 0%, 80%);
+        color: rgb(0, 0, 0);
+        padding: 10px 15px;
+        border: none;
+        font-weight: bold;
+        border-radius: 5px;
+        font-family: phetsarath OT;
+        cursor: pointer;
+    }
+.ssss{
+    display: flex;
+    height: 470px;
+    width: 715px;
+    gap: 10px;
+    border-color: snow;
+    border: solid snow;
+}
+    .dropdown a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 10px 15px;
+    }
+
+    .dropdown .content {
+        display: none;
+        background-color: hsl(0, 0%, 95%);
+        min-width: 100px;
+        box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+    }
+
+
+
+    .dropdown:hover button {
+        background-color: hsl(0, 0%, 70%);
+    }
+
+    .dropdown a:hover {
+        background-color: hsl(0, 0%, 90%);
+
+    }
+
+    body {
+        
+        background-color: rgb(75, 195, 45);
+    }
+
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .neon {
+  animation: greenTheme 5s infinite;
+  background: #000; /* เพื่อให้เห็นแสงชัดขึ้น */
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+@keyframes greenTheme {
+  0% {
+    box-shadow: 0 0 20px #2ecc71, 0 0 40px #2ecc71, 0 0 60px #2ecc71;
+  }
+  25% {
+    box-shadow: 0 0 20px #27ae60, 0 0 40px #27ae60, 0 0 60px #27ae60;
+  }
+  50% {
+    box-shadow: 0 0 20px #1abc9c, 0 0 40px #1abc9c, 0 0 60px #1abc9c;
+  }
+  75% {
+    box-shadow: 0 0 20px #a3e635, 0 0 40px #a3e635, 0 0 60px #a3e635;
+  }
+  100% {
+    box-shadow: 0 0 20px #2ecc71, 0 0 40px #2ecc71, 0 0 60px #2ecc71;
+  }
+}
+
+
+    .container {
+        display: flex;
+        overflow-x: scroll;
+        padding: 24px;
+        width: 700px;
+        height: 550px;
+        gap: 12px;
+        scroll-padding: 24px;
+        scroll-snap-type: x mandatory;
+        margin-top: 64px;
+
+    }
+
+    .container .item {
+        flex: 0 0 100%;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 8px;
+        color: #FFF;
+        scroll-snap-align: start;
+
+
+    }
+
+
+
+    .container .item:nth-child(1) {
+        background-image: url(maemae.jpg);
+        height: 600px;
+        width: 600px;
+        overflow: hidden;
+
+    }
+
+    .container .item:nth-child(2) {
+        background-image: url(suan1.jpg);
+        height: 600px;
+        width: 600px;
+        overflow: hidden;
+    }
+
+    .container .item:nth-child(3) {
+        background-image: url(suan4.jpg);
+        height: 600px;
+        width: 600px;
+        overflow: hidden;
+    }
+
+    .container .item:nth-child(4) {
+        background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+    }
+</style>
+<script>
+    function toggleDropdown() {
+        const content = document.getElementById("dropdownContent");
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+    
+    // Optional: hide dropdown when clicking outside
+    window.onclick = function(event) {
+        const dropdown = document.querySelector(".dropdown");
+        const content = document.getElementById("dropdownContent");
+        if (!dropdown.contains(event.target)) {
+            content.style.display = "none";
+        }
+    };
+    </script>
+    
+<body>
+    <!-- <script>
+    Swal.fire({
+        icon: 'error',
+        title: 'ຕອນນີ້ຍັງບໍ່ໄດ້ກັບບ້ານ!',
+        text: 'ຖ້າກ່ອນເດີ້!',
+        showConfirmButton: false,
+        timer: 4000
+    }).then(() => {
+                    // Redirect to index.html after the success message
+                    window.location.href = 'index.html';
+                });
+</script> -->
+
+<header class="site-header" style="background-color: rgb(255, 255, 255);">
+    <div class="logo"><a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">  <img src="LOGO_YARLUEM-removebg-preview.png" alt="" class="imgss"> ສວນຊາ ອົງລອງ</a></div>
+    <nav class="main-navigation">
+        <ul class="tea-navigation">
+            <li style="color: green;" ><a href="greentea.html" class="tea-nav-link active" style="color: green;"><img src="green-tea (1).png" alt="" width="40">ຊາຊຽວ</a></li>
+            <li><a href="white.html" class="tea-nav-link"><img src="tea-leaf.png" alt="" width="40">ຊາຂາວ</a></li>
+            <li><a href="red.html" class="tea-nav-link red-tea"><img src="orange.png" alt="" width="40">ຊາແດງ</a></li>
+            <li><a href="baimone.html" class="tea-nav-link mulberry-tea"><img src="berry.png" alt="" width="40">ຊາໃບມອນ</a></li>
+        </ul>
+        <ul class="site-navigation">
+            <li><a href="product.html" class="nav-link">ການຜະລິດຊາ</a></li>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<div class="spebox" style="height: 1400px;width: 700px; position: absolute;top: 25%;background-color: black;z-index: -1;left: 2%;">
+
+</div>
+    <div class="billion" style="position: absolute;top: 25%;left: 5%; color: white;">
+        <center><h1 style="color: white;text-decoration: underline;">ຂ່າວສານກ່ຽວກັບສວນ ແລະ ຕົ້ນກຳເນີດ</h1></center>
+    </div>
+    <div class="alltime" style="margin-top: 100px;">
+    <div class="dropdown" style="position: fixed; margin-top: 2%; right: 2%; z-index: 1000;left: 88.7%;width: 200px;padding: 15px;">
+        <button onclick="toggleDropdown()" style="background-color: orange;">ເພີ່ມເຕີມກ່ຽວກັບສວນຊາ</button>
+        <div class="content" id="dropdownContent">
+            <a href="contact.html">ຂ່າວສານປັດຈຸບັນ</a>
+            <a href="locate.html">ລວມຮູບພາບ ແລະ ທີ່ຕັ້ງ</a>
+            <a href="predent.html">ການປູກຕົ້ນຊາ</a>
+            <a href="brewt.html">ການຊົງຊາ</a>
+            <a href="product.html">ການຜະລິດຊາ</a>
+        </div>
+    </div>
+    <button type="button" class="market" style="position: fixed;margin-left: 1390px; margin-top: -30px ; 
+    font-family: phetsarath OT;z-index: 1000; padding: 10px;padding-right: 17px;";><a href="bill_calculator.html" style="text-decoration: none; color: black;" >🫖ສົນໃຈສັ່ງຊື້</a></button>
+
+    <div class="wrapper" style="justify-content: start;margin-top: -60px;padding-left: 20px;">
+        <div class="container">
+            <div class="item">
+                <h1
+                    style="color: rgb(0, 154, 15); font-weight: normal;box-shadow: 10 40 black; text-decoration: underline;
+                     text-shadow: 0 0 6px #fff, 0 0 10px #fff;">
+                    ຜູ້ຈັດການ</h1>
+                <p
+                    style="color: black; background-color: white; width: 320px;padding: 5px;border-radius: 5px;margin-top: -30px; ">
+                    ປັດຈຸບັນຜູ້ຄອບຄອງຮ້ານ,ໂຮງເຮັດຊາແມ່ນ ນາງ ຈ່ອຍ ຈະເລີນ <br>ເຊີ່ງແມ່ນແມ່ຂອງຊາພະເຈົ້າເອງ ປັດຈຸບັນອາຍູ 41
+                    ປີ ເກີດເມື່ອ ປີ 1983 <br>ໄດ້ດຳລົງຫນ້າທີ່ການ ຂາຍ ຜະລິດ ແລະ ການເກັບກ່ຽວທັງຫມົດ<br>
+                    ພ້ອມດ້ວຍຫົວຫນ້າຄອບຄົວແລະ ລູກໆ . ທ້າວແສງມະນີ ວິວົງພັນ .<br> ທ້າວ ສອນໄຊວິວົງພັນ . ທ້າວ ບີນລີ້ ວິວົງພັນ
+                </p>
+                <h3
+                    style="text-decoration: underline;  text-shadow: 0 0 6px #fff, 0 0 10px #fff; color:rgb(0, 154, 15);">
+                    ນາງ ຈ່ອຍ ຈະເລີນ</h3>
+            </div>
+
+            <div class="item">
+                <h1>ຂ່າວສານຍາມຝົນ</h1>
+                <p style="  text-shadow: 0 0 6px #000000, 0 0 10px #000000; color:rgb(255, 255, 255);">ໃນຊ້ວງກາງເດືອນ 8
+                    ແມ່ນຈະມີຝົນ ແລະ ຫມອກຄຸມເຮັດໃຫ້ກາງເດີນທາງ ຫລື ສັນຈອນ ນັ້ນ ລຳບາກ ນອກນັ້ນ ຍັງເຮັດໃຫ້ຫຍ້າຂື້ນສູງໄວແລະ
+                    ເຮັດໃຫ້ສາມາດພົບເຫັນສັດອັນຕະລາຍໄດ້ ເຊັ້ນ : ງູ , ຂີ້ເຂັບ .... ການເດີນທາງໃນຊ້ວງນີ້ແມ່ນ
+                    ຈະຕ້ອງໄດ້ລະວັງເປັນພິເສດ ຄວນພົບຢາກັນຍຸງ ແລະ ໃສ່ເສື້ອຜ້າ ໂສ້ງເສື້ອ ແຂນຂາຍາວ . ແຕ່ພັດວ່າ
+                    ການເກັບຊາຍັງດຳເນີນຕໍ່ໄປ ຕ້ອງໄດ້ເກັບ ແລະ ຫນັກກວ່າເກົ່ານຳ ເພາະວ່າ ການເກັບຊາໃນ ຊ່ວງຍາມຝົນ ແມ່ນ ຈະເກັບ 2
+                    ເທື່ອຕໍ່ອາທິດ ສ່ວນ ເວລາທີ່ຍັງເຫລືອ ແມ່ນ ພັກຜ່ອນ ແລະ ຕັດຫຍ້າ </p>
+                <h3>ຢ່າລືມພົກສະເປ</h3>
+            </div>
+
+            <div class="item">
+                <h1>ຂ່າວສານຍາມຮ້ອນ </h1>
+                <p style="  text-shadow: 0 0 6px #000000, 0 0 10px #000000; color:rgb(255, 255, 255);">ຍາມຮ້ອນ ແມ່ນ
+                    ຈະມີອາກາດທີ່ຮ້ອນຫລາຍ ເຖີງ 34 ອົງສາ ການທ່ອງທ່ຽວແມ່ນ ສະດວກ ສະບາຍ ເວັ້ນວ່າຈະບໍ່ຮ້ອນ
+                    ແລະເຂົ້າໄປໃນສະຖານທີ່ ທີ່ ບໍ່ທັນພັດທະນາ ອາດຈະມີຝູ່ນ ແລະ ໂອກາດເກີນອຸປະຕິເຫດໄດ້ ຊ້ວງນີ້ແມ່ນ
+                    ມີຫມາກໄມ້ຫລາຍຫລາຍຊະນິດ ທີ່ກຳລັງໃຫຍ່ ເຊັ່ນ ຫມາກໄຟ ,ຫມາກທົ່ວລຽນທີ່ກຳລັງເປັນຫມາກ, ຫມາກເງາະ,ຫມາກມ່ວງ ແລະ
+                    ອື່ນໆ...
+
+                </p>
+                <h3>ຖືພັດລົມມານຳເດີ້😂</h3>
+            </div>
+        </div>
+    </div>
+
+<div class="tectmama">
+    <div class="box1" style="height: 470px ;width: 715px; background-color: black; position: absolute; top: 25%; right: 5%;margin-right: -20px;">
+        <div class="ssss">
+<img src="sss1.jpg" alt="">
+<img src="sss12.jpg" alt="">
+</div><h2 style="margin-left: 40px;text-shadow: 0px 0px white;margin-top: 30px;background-color: #FFF;border-radius: 5px;
+ width: 560px;">ຕອນນີ້ແມ່ນ ຂ້າພະເຈົ້າໄດ້ພາແຂກໄປເບີ່ງ ການກະສິກຳ ທົ່ວລຽນ 😋</h2>
+    </div>
+</div>
+
+<section class="origin" style="width: 2900px; height: 700px;margin-left: 40px;">
+    <div class="boxss1" >
+        <div class="tevt">
+            <img src="origin of tea.webp" alt="" style="height: 620px;">
+
+            <div class="tebt" style="position: absolute ; top: 115%;left: 47%;">
+            <div class="fillers" style="margin-top: 100px;"> <center >  <h1>ຕົ້ນກຳເນີດຂອງຊາ</h1></center> </div>
+                <p>Frist thing that we have to know is the agriculture of tea is not begin in lao.  
+Tea <br>originated in China and India. The most story of tea that we have been listening <br>
+ to might have come from China,because the story of tea is too long.  That's more <br>than 3000.years 
+<br>researcher of plant is discover the tea by accident since years 2739 and 
+There is <br>also had myth about tea : is started from the researcher is boiling water 
+ under the<br> tea tree ,but the tea leaf is failing down and been boiling with the water  
+  it’s make <br>that boiled water has different testy such as :  the smell , color… and that 
+   is the <br>story before is becoming tea now aday <br>
+<br>
+ໃນປັດຈຸບັນມະນຸດເຮົາເຖີງວ່າຊິບໍ່ຄ່ອຍຮູ້ຫຍັງກ່ຽວກັບຊາຫລາຍແຕ່ຕ້ອງໄດ້ເຄີຍເຫັນ,ເຄີຍກິນ ຫລື ເຄີຍຊົມໃຊ້ <br> 
+ພະລິດຕະພັນທີ່ເຮັດຂື້ນມາຈາກຊາແນ່ນອນ ເຊັ່ນ: &nbsp; ໃນຕົວຢ່າງນີ້ຂ້າພະເຈົ້າຊິຍົກຕົວຜະລິດຕະພັນທີ່ເຮັດຈາກຊາ <br>ມາໃຫ້. 
+3ປະເພດຜະລິດຕະພັນທີ່ເຮັດຈາກເຄື່ອງດື່ມ:
+ເຄື່ອງດື່ມ
+ໃບຊາສົດ ຫລື ຊາແຫ້ງ :​ ຊາຂຽວ,&nbsp;ຊາແດງ
+ຊາ<br>ພ້ອມດື່ມ  ຕາມ ຫ້າງ,ຮ້ານ : ຊາເຢັນ , ຊານົມ
+ເຄື່ອງດື່ມທີ່ມີຊາຜະສົມນຳ : ຊາຫມາກນາວ,&nbsp;ນົມຊາຂຽວ
+ຜົງຊາ<br>ສຳເລັດຮູບ : ມັສຊະ , ຜົງຊານົມໄຂ່ມຸກ
+ອາຫານ
+ຂະຫນົມແລະຂອງຫວານ : ເຄັກຊາຂຽວ,ກະແລມຊາຂຽວ 
+ຜົງ<br>ປຸງລົດ 
+ຜະລິດຕະພັນຄວາມງາມ
+ສະກິນແຄ ແລະ ເຄື່ອງສຳອາງ :​ຄິມບຳລຸງຜິວ ເຊລັ່ມ ແນວມ໊າກຫນ້າ
+ສະບູ ແລະ <br>ແຊມພູ 
+ຜະລິດຕະພັນນ້ຳຫອມ 
+
+</p>
+            </div>
+        </div>
+    </div>
+    <div class="neon">
+    <div class="123" style="position: absolute;width: 110px;background-color: white;height: 915px;top: 97%;left: 91%;border-radius: 10px;"></div>
+    <div class="1234" style="position: absolute;width: 100px;background-color: white;height: 910px;top: 105%;left: 89%;border-radius: 10px;"></div>
+    <div class="123" style="position: absolute;width: 100px;background-color: white;height: 910px;top: 105%;left: 89%;border-radius: 10px;"></div>
+</div>
+<div class="jewery" style="position: absolute; top: 110%; left: 50%;">
+    <h1 style="color: rgb(0, 80, 0);">Credit by MR.SONEXAI VVP</h1>
+</div>
+</section>
+
+    <footer style="
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    position: relative;
+    top: 100%;
+">
+        <p>ສະຖານທີ່: ບ້ານຫຼັກ 33, ເມືອງປາກຊ່ອງ, ແຂວງຈຳປາສັກ</p>
+    </footer></div>
+</body>
+
+</html>

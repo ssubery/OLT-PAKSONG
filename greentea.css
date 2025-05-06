@@ -1,0 +1,369 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Phetsarath OT', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    font-weight: bolder;
+    line-height: 1.6; /* Improve readability */
+}
+
+.btn-son {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    margin-bottom: 100px;
+    margin-right: 120px;
+}
+
+.imgss{
+    width: 60px; /* Adjust image size for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: -10px; /* Adjust margin */
+}
+
+.market {
+    background-color: #FF9800; /* Orange button */
+    color: white;
+    border: none;
+    padding: 0.8em 1.2em; /* Adjust padding for smaller screens */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em; /* Adjust font size for smaller screens */
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.market:hover {
+    background-color: #F57C00; /* Darker orange on hover */
+}
+
+.site-header {
+    /* background-color: #2c3e50;
+    color: #fff;
+    padding: 15px 20px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    min-height: 60px;  */
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.market190{
+    width: 50px;
+    height: 50px;
+}.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown button {
+    background-color: hsl(30, 84%, 58%);
+    color: black;
+    padding: 15px 25px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: 'Phetsarath OT';
+    cursor: pointer;
+}
+
+.dropdown .content {
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 95%);
+    min-width: 150px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+    z-index: 1;
+}
+
+.dropdown a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.dropdown a:hover {
+    background-color: hsl(0, 0%, 90%);
+}
+
+
+
+.logo {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
+    font-weight: bold;
+}
+
+.main-navigation {
+    display: none; /* Hide main navigation by default on smaller screens */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    background-color: #2c3e50;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.main-navigation.open {
+    display: flex; /* Show navigation when the 'open' class is added (e.g., via JavaScript) */
+}
+
+.tea-navigation,
+.site-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Adjust spacing for smaller screens */
+    flex-direction: column; /* Stack items on smaller screens */
+    align-items: center; /* Center items on smaller screens */
+    width: 100%; /* Take full width on smaller screens */
+}
+
+.tea-nav-link,
+.nav-link {
+    color: #000000; /* Default link color in header */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+    border-radius: 8px;
+    width: 100%; /* Make links full width on smaller screens for easier tapping */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.tea-nav-link:hover,
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.tea-nav-link.active box-icon {
+    color: #2ecc71;
+}
+
+.tea-nav-link.red-tea {
+    color: #e74c3c;
+}
+
+.tea-nav-link.red-tea box-icon {
+    color: #e74c3c;
+}
+
+.tea-nav-link.mulberry-tea {
+    color: #f39c12;
+}
+
+.tea-nav-link.mulberry-tea box-icon {
+    color: #f39c12;
+}
+
+.content-wrapper {
+    padding: 15px; /* Adjust padding for smaller screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the sections */
+    
+}
+
+section {
+    background-color: lch(95% 0.01 296.81);
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-bottom: 1rem; /* Adjust margin for smaller screens */
+    width: 95%; /* Further adjust width for better mobile fit */
+    max-width: 1200px; /* Keep a reasonable max width for larger screens */
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.8rem; /* Adjust font size for smaller screens */
+    color: #28a745; /* Green accent color */
+    margin-bottom: 1rem; /* Adjust margin for smaller screens */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 1rem; /* Adjust padding for smaller screens */
+    margin-bottom: 1rem; /* Adjust margin for smaller screens */
+}
+
+li {
+    margin-bottom: 0.5rem; /* Adjust margin for smaller screens */
+    color: #555;
+    font-size: 0.95rem; /* Adjust font size for smaller screens */
+}
+
+.explanation {
+    color: #666;
+    margin-bottom: 1rem; /* Adjust margin for smaller screens */
+    line-height: 1.6;
+    width: 95%; /* Further adjust width for better mobile fit */
+    max-width: 1200px;
+    text-align: center; /* Center the explanation text */
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+}
+
+.additional-benefits {
+    margin-top: 1rem; /* Adjust margin for smaller screens */
+    padding: 1rem; /* Adjust padding for smaller screens */
+    background-color: #f0fff0; /* Light green background for emphasis */
+    border-radius: 0.3rem;
+    border: 1px solid #e0eee0;
+    width: 95%; /* Further adjust width for better mobile fit */
+    max-width: 1200px;
+}
+
+.additional-benefits h2 {
+    font-size: 1.3rem; /* Adjust font size for smaller screens */
+    color: #28a745;
+}
+
+/* Responsive Design using Media Queries */
+@media (min-width: 768px) { /* Target tablets and larger screens */
+    .imgss{
+        width: 80px;
+        height: 50px;
+        margin-bottom: -15px;
+    }
+
+    .market {
+        padding: 1em 1.5em;
+        font-size: 1em;
+    }
+
+    .site-header {
+        padding: 20px 40px;
+        min-height: 70px;
+    }
+
+    .logo {
+        font-size: 1.8em;
+    }
+
+    .main-navigation {
+        display: flex; /* Show main navigation on larger screens */
+        flex-direction: row;
+        position: static; /* Reset positioning */
+        width: auto;
+        background-color: transparent;
+    }
+
+    .tea-navigation,
+    .site-navigation {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        width: auto;
+    }
+
+    .tea-nav-link,
+    .nav-link {
+        padding: 8px 12px;
+        width: auto;
+    }
+
+    .content-wrapper {
+        padding: 20px;
+    }
+
+    section {
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        width: 90%;
+        max-width: 1300px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    ul {
+        padding-left: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    li {
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .explanation {
+        margin-bottom: 1rem;
+        width: 90%;
+        max-width: 1250px;
+        font-size: 1rem;
+    }
+
+    .additional-benefits {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        width: 90%;
+        max-width: 1300px;
+    }
+
+    .additional-benefits h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Optional: Adjustments for even larger desktops */
+@media (min-width: 1200px) {
+    .content-wrapper {
+        padding: 30px;
+    }
+
+    section {
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    ul {
+        padding-left: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .explanation {
+        font-size: 1.1rem;
+    }
+
+    .additional-benefits h2 {
+        font-size: 1.7rem;
+    }
+}
+.wrapper{
+   justify-content: start;
+
+}

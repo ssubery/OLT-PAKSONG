@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento Social</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <style>
+        body {
+            background-color: #1e272e; /* Dark background */
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .de {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 2px solid #ddd;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .anim-container {
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .anim-text {
+            font-size: 1.2em;
+            white-space: nowrap;
+            color: #fff;
+            animation: slide 10s linear infinite;
+            width: 400px; /* Adjust width as needed */
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark translucent container */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            text-align: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            color: #ddd;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .input-group input[type="email"],
+        .input-group input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            width: 94%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #54a0ff; /* Blue button */
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: -20px;
+            text-decoration: none; /* Remove default link styling */
+            display: inline-block; /* Make the button behave like a block for width */
+            text-align: center; /* Center the text inside the button */
+        }
+
+        .btn:hover {
+            background-color: #3778c2;
+        }
+
+        .google-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 94%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #000;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .google-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .google-icon {
+            margin-right: 10px;
+        }
+
+        .signup-link {
+            color: #ddd;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .signup-link a {
+            color: #54a0ff;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .join-text {
+            color: #bbb;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+
+        /* Style adjustments to match the image more closely */
+        body {
+            background-image: url('your-dark-background-image.jpg'); /* Replace with a dark background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.85); /* Even darker and more opaque */
+            padding: 40px;
+            border-radius: 8px; /* Slightly less rounded */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+            width: 350px; /* Slightly narrower */
+        }
+
+        .logo {
+            font-size: 28px; /* Slightly larger logo */
+            margin-bottom: 25px;
+        }
+
+        .input-group label {
+            color: #eee;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .input-group input[type="email"],
+        .input-group input[type="password"] {
+            padding: 12px;
+            border-radius: 4px;
+            background-color: #222; /* Darker input fields */
+            font-size: 15px;
+        }
+
+        .btn {
+            padding: 14px;
+            border-radius: 4px;
+            font-size: 17px;
+        }
+
+        .google-btn {
+            padding: 14px;
+            border: 1px solid #555; /* Add a border to the Google button */
+            background-color: transparent; /* Make Google button transparent */
+            color: #fff; /* White text for Google button */
+        }
+
+        .google-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+        }
+
+        .signup-link {
+            color: #ccc;
+            margin-top: 25px;
+        }
+
+        .join-text {
+            color: #999;
+            margin-top: 35px;
+            font-size: 11px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="inpiut.css">
+</head>
+<body>
+    <div class="de">
+        <div class="profile-image">
+            <img src="/WhatsApp Image 2025-04-06 at 16.40.44_6daf4425.jpg" alt="Your Photo"> </div>
+        <div class="anim-container">
+            <p class="anim-text">I'am a programmer</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="logo">Register</div>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Your password">
+            </div>
+            <button type="submit" class="btn">Sign in</button>
+        </form>
+        <button class="google-btn">
+            <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24" height="24">
+                <path fill="#FBC02D" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8.747-11.303 8.747-6.23 0-11.335-5.107-11.335-11.335s5.105-11.333 11.335-11.333c3.179 0 5.895 1.221 7.763 3.056L43.611 20.083z"/>
+                <path fill="#E53935" d="M24 48c6.631 0 12.248-2.083 16.956-5.685L24 30.619V48z"/>
+                <path fill="#4CAF50" d="M24 4A23.994 23.994 0 0 0 6.318 14.63l13.473 13.469 6.351-6.355C21.308 7.745 23.935 4 24 4z"/>
+                <path fill="#1A73E8" d="M43.611 20.083A23.956 23.956 0 0 0 24 4c-11.325 0-21.049 8.407-23.677 19.775l13.502 13.501 6.373-6.373A11.994 11.994 0 0 1 24 28.747c0-7.168 5.882-12.876 12.876-12.876.323 0 .642.024.954.065z"/>
+            </svg>
+            Sign in with Google
+        </button>
+        <div class="signup-link">Don't have an account ? <a href="#">Sign up</a> . It's free!</div>
+        <div class="join-text">Join over 2M global social media users</div>
+    </div>
+
+
+        </video>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+
+            if (!emailInput.value || !passwordInput.value) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please enter your email and password!',
+                });
+            } else {
+                // Simulate successful login
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: 'Sign in successful!',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    // Redirect to index.html after the success message
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<style>
+    body{
+        font-family: phetsarath OT;
+    }
+</style>
+<body>
+    <script>
+    Swal.fire({
+        icon: 'error',
+        title: 'ຕອນນີ້ຍັງບໍ່ໄດ້ກັບບ້ານ!',
+        text: 'ຖ້າກ່ອນເດີ້!',
+        showConfirmButton: false,
+        timer: 4000
+    }).then(() => {
+                    // Redirect to index.html after the success message
+                    window.location.href = 'index.html';
+                });
+</script>
+</body>
+</html>

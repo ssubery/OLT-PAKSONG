@@ -1,0 +1,239 @@
+/* welcome2.css */
+
+body {
+    font-family: phetsarath OT;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+header {
+    background-color: #fff;
+    font-family: phetsarath OT;
+
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0; /* Add this to make it stick to the top */
+    z-index: 100; /* Ensure it stays above other content */
+    font-weight: bold;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #2c3e50;
+}
+
+header nav a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform for a slight movement */
+    display: inline-flex; /* To align icon and text vertically */
+    align-items: center;
+}
+
+header nav a box-icon {
+    margin-right: 5px;
+    --bx-size: 1.2em; /* Adjust icon size */
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #3498db; /* Example hover color */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+header nav a:hover box-icon {
+    color: inherit; /* Inherit the hover color from the link */
+}
+
+.btn-son {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.market-page {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.market-page a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.market-page:hover {
+    background-color: #27ae60;
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+
+section {
+    padding: 30px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    font-family: phetsarath OT;
+font-weight: bold;
+}
+
+section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+section ul {
+    /* list-style: none; */
+    padding: 0;
+}
+
+section li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+section li:last-child {
+    border-bottom: none;
+}
+
+section li a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+section li a:hover {
+    color: #2980b9;
+}
+
+section li.red a {
+    color: #e74c3c;
+}
+
+section li.red a:hover {
+    color: #c0392b;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+section .ongpic{
+    height: 200px;
+    width: 300px;
+   margin-left: 250px;
+}
+
+.locate{
+list-style: none;
+text-decoration: none;
+}
+
+.locate button a{
+    text-decoration: none;
+    color: #fff;
+}
+.locate button{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.locate button:hover{
+    background-color: #0056b3;
+}
+
+.ingre{
+list-style: none;
+text-decoration: none;
+}
+
+.ingre button a{
+    text-decoration: none;
+    color: #fff;
+}
+.ingre button{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ingre button:hover{
+    background-color: #0056b3;
+}
+.btn-son {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    margin-bottom: 100px;
+    margin-right: 120px;
+}
+
+.market {
+    background-color: #FF9800; /* Orange button */
+    color: white;
+    border: none;
+    padding: 1em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.market:hover {
+    background-color: #F57C00; /* Darker orange on hover */
+}
+a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+
+}
+section{
+    box-shadow: 0 0 10px black;
+}
+header{
+    box-shadow: 0 0 10px black;
+   
+}
+
+.imgss{
+    width: 80px;
+    height: 50px;
+    margin-bottom: 10px;
+    
+}

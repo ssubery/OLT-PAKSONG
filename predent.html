@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="greentea.css">
+</head>
+<script>
+    function toggleDropdown() {
+        const content = document.getElementById("dropdownContent");
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+    
+    // Optional: hide dropdown when clicking outside
+    window.onclick = function(event) {
+        const dropdown = document.querySelector(".dropdown");
+        const content = document.getElementById("dropdownContent");
+        if (!dropdown.contains(event.target)) {
+            content.style.display = "none";
+        }
+    };
+    </script>
+    
+<body>
+
+    <div class="dropdown" style="position: fixed; margin-top: 13%; left: 88.5%;">
+        <button onclick="toggleDropdown()">ເພີ່ມເຕີມກ່ຽວກັບສວນຊາ</button>
+        <div class="content" id="dropdownContent">
+            <a href="contact.html">ຂ່າວສານປັດຈຸບັນ</a>
+            <a href="locate.html">ລວມຮູບພາບ ແລະ ທີ່ຕັ້ງ</a>
+            <a href="predent.html">ການປູກຕົ້ນຊາ</a>
+            <a href="brewt.html">ການຊົງຊາ</a>
+            <a href="product.html">ການຜະລິດຊາ</a>
+        </div>
+    </div>
+    <header class="site-header" style="background-color: rgb(255, 255, 255);">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">  <img src="LOGO_YARLUEM-removebg-preview.png" alt="" class="imgss"> ສວນຊາ ອົງລອງ</a></div>
+        <nav class="main-navigation">
+            <ul class="tea-navigation">
+                <li><a href="greentea.html" class="tea-nav-link active"><box-icon name='leaf' type='solid'></box-icon>ຊາຊຽວ</a></li>
+                <li><a href="white.html" class="tea-nav-link"><box-icon name='leaf' type='solid'></box-icon>ຊາຂາວ</a></li>
+                <li><a href="red.html" class="tea-nav-link red-tea"><box-icon name='leaf' type='solid'></box-icon>ຊາແດງ</a></li>
+                <li><a href="baimone.html" class="tea-nav-link mulberry-tea"><box-icon name='leaf' type='solid'></box-icon>ຊາໃບມອນ</a></li>
+            </ul>
+            <ul class="site-navigation">
+                <li><a href="product.html" class="nav-link">ການຜະລິດຊາ</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <button type="button" class="market" style="position: fixed; margin-top: 30px ; font-family: phetsarath OT; margin-left: 1370px; z-index: 1000;";><a href="bill_calculator.html" style="text-decoration: none; color: black; z-index: 1000;" >🫖ສົນໃຈສັ່ງຊື້</a></button>
+
+    <img src="totoro-transparent.gif" alt="" class="market190" style="right: 0 ; position: fixed; top: 75%;background: transparent;">
+    <div class="card" style="text-align: center ; margin-top: 50px;">
+   <img src="predent.png" alt="" width="80%"padding="50px"><br><br><br><br><br>
+   <img src="CIRCLE.png" alt="" width="80%"><br><br><br><br><br>
+   <img src="keper.png" alt="" width="80%"></div><br><br><br>
+   <center><h2>ການເກັບກ່ຽວຍອດຊາ</h2></center><br><br><br><br><br><br>
+   <center>
+    <img src="pickt.png" alt="" width="80%">
+   </center>
+
+   <section style="margin-left: 110px;margin-top: 50px;">
+   <center>
+    
+    <h2>
+
+    ສະຫລູບການເກັບກ່ຽວ<br>ສະຫລູບແລ້ວການເກັບກ່ຽວໃນຫນື່ງປີແມ່ນ ເດືອນລະ 100 ກິໂລ ທັງຫມົດໃນ 1​ປີ ແມ່ນ 5 ໂຕນກວ່າໆ (ສະເພາະ ການເກຫບກ່ຽວໃບຊາສົດໆ) ຫລັງຂາກການເກັບກ່ຽວມາແລ້ວ ຕໍ່ມາແມ່ນການຜະລິດຊາແຫ້ງ ຫລາຍຫນ້ອຍຊື້ນກັບຊາທີ່ຜະລິດ ເຊັ່ນ: ຊາຂຽວ ແມ່ນ 6-7ໂລ ຕໍ່ຊາແຫ້ງໂລຫນື່ງ (ຈຳນວນຊາ 5ໂຕນແມ່ນ ສະເພາະຊາຂຽວ). ຊາແດງແມ່ນ ເກັບກ່ຽວເດືອນລະເທືອ ເທື່ອ1 ໄດ້ຢູ່ 25-30 ໂລ ເນື່ອງຈາກຕົ້ນຊາແດງມີຫນ້ອຍ ສ່ວນການຜະລິດແມ່ນ ອັດຕາສ່ວນ 2 ຕໍ່ 1 ຄື 2ໂຕ ຕໍ່ 1 ໂລຊາແຫ້ງ 
+
+    </h2>
+
+</center>
+   </section>
+   <footer style="
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   padding: 20px;
+   font-size: 0.9em;
+   position: relative;
+   top: 100%;
+">
+       <p>ສະຖານທີ່: ບ້ານຫຼັກ 33, ເມືອງປາກຊ່ອງ, ແຂວງຈຳປາສັກ</p>
+   </footer>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ການຜະລິດຊາໃບມອນ - SONEXAY</title>
+    <link rel="stylesheet" href="greentea.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <style>
+        body {
+            font-family: phetsarath OT;
+            font-weight: bold;
+            color: #333; /* Darker text for better readability */
+            background-color: #f4f4f4; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .site-header {
+            background-color: #4CAF50; /* Green header */
+            color: white;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            font-size: 1.5em;
+            text-decoration: none;
+            color: white;
+        }
+
+        .main-navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .tea-navigation li, .site-navigation li {
+            margin-right: 1em;
+        }
+
+        .tea-navigation li:last-child, .site-navigation li:last-child {
+            margin-right: 0;
+        }
+
+        .tea-nav-link, .nav-link {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 0.5em 0.8em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tea-nav-link:hover, .nav-link:hover {
+            background-color: #388E3C; /* Darker green on hover */
+        }
+
+
+        .btn-son {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            margin-bottom: 100px;
+        }
+
+        .market {
+            background-color: #FF9800; /* Orange button */
+            color: white;
+            border: none;
+            padding: 1em 1.5em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .market:hover {
+            background-color: #F57C00; /* Darker orange on hover */
+        }
+
+        .content-wrapper {
+            padding: 2em;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 2em;
+        }
+
+        .production-process h1 {
+            color: #2E7D32; /* Dark green heading */
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        .explanation {
+            color: #555;
+            margin-bottom: 1em;
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .production-process ol {
+            padding-left: 1.5em;
+        }
+
+        .production-process li {
+            margin-bottom: 1.5em;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .production-process h3 {
+            color: #388E3C; /* Slightly lighter dark green for subheadings */
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+    </style>
+    <script>
+        function toggleDropdown() {
+            const content = document.getElementById("dropdownContent");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+        
+        // Optional: hide dropdown when clicking outside
+        window.onclick = function(event) {
+            const dropdown = document.querySelector(".dropdown");
+            const content = document.getElementById("dropdownContent");
+            if (!dropdown.contains(event.target)) {
+                content.style.display = "none";
+            }
+        };
+        </script>
+        
+<body>
+    <header class="site-header" style="background-color: rgb(255, 255, 255);">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">  <img src="LOGO_YARLUEM-removebg-preview.png" alt="" class="imgss"> ສວນຊາ ອົງລອງ</a></div>
+        <nav class="main-navigation">
+            <ul class="tea-navigation">
+                <li style="color: green;" ><a href="greentea.html" class="tea-nav-link active" style="color: green;"><img src="green-tea (1).png" alt="" width="40">ຊາຊຽວ</a></li>
+                <li><a href="white.html" class="tea-nav-link"><img src="tea-leaf.png" alt="" width="40">ຊາຂາວ</a></li>
+                <li><a href="red.html" class="tea-nav-link red-tea"><img src="orange.png" alt="" width="40">ຊາແດງ</a></li>
+                <li><a href="baimone.html" class="tea-nav-link mulberry-tea"><img src="berry.png" alt="" width="40">ຊາໃບມອນ</a></li>
+            </ul>
+            <ul class="site-navigation">
+                <li><a href="product.html" class="nav-link">ການຜະລິດຊາ</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <div class="dropdown" style="position: fixed; margin-top: 7%; left: 88.5%;">
+        <button onclick="toggleDropdown()">ເພີ່ມເຕີມກ່ຽວກັບສວນຊາ</button>
+        <div class="content" id="dropdownContent">
+            <a href="contact.html">ຂ່າວສານປັດຈຸບັນ</a>
+            <a href="locate.html">ລວມຮູບພາບ ແລະ ທີ່ຕັ້ງ</a>
+            <a href="predent.html">ການປູກຕົ້ນຊາ</a>
+            <a href="brewt.html">ການຊົງຊາ</a>
+            <a href="product.html">ການຜະລິດຊາ</a>
+        </div>
+    </div>
+    <img src="totoro-transparent.gif" alt="" class="market190" style="right: 0 ; position: fixed; top: 75%;background: transparent;">
+
+    <div class="btn-son">
+        <button type="button" class="market" style="position: fixed; margin-top: 120px  ; font-family: phetsarath OT; ";><a href="bill_calculator.html" style="text-decoration: none; color: black;" >🫖ສົນໃຈສັ່ງຊື້</a></button>
+    </div>
+
+<main class="content-wrapper">
+    <section class="production-process">
+        <h1>ຂັ້ນຕອນການຜະລິດຊາຂອງພວກເຮົາ:</h1>
+        <h1  style=" color: rgb(25, 219, 22); font-size: larger;">ການຜະລິດຊາຂຽວ</h1>
+
+        <p class="explanation">ການຜະລິດຊາຂອງພວກເຮົາແມ່ນມີຂັ້ນຕອນທີ່ພິຖີພິຖັນ ແລະຕ້ອງການຄວາມຊຳນານສູງ. ທຸກຂັ້ນຕອນຕ້ອງໃຊ້ປະສົບການ ແລະຄວາມຊຳນານສູງ ແລະໃຊ້ເວລາດົນເຖິງຫຼາຍມື້. ນີ້ແມ່ນສ່ວນໜຶ່ງຂອງຂັ້ນຕອນການຜະລິດ:</p>
+        <ol>
+            <li>
+                <h3>ຂັ້ນຕອນທີ 1: ການເກັບກ່ຽວຍອດຊາ</h3>
+                <p class="explanation">ການເກັບຍອດຊາ ແມ່ນຄວນເກັບສະເພາະ 3 ໃບແລກທາງເທິງ.</p>
+            </li>
+            <li>
+                <h3>ຂັ້ນຕອນທີ 2: ການຂົ້ວ</h3>
+                <p class="explanation">ເຮົາຈະນຳເອົາໃບຊາທີ່ເກັບມາສົດໆ ຫຼື ໄລຍະເວລາບໍ່ໃຫ້ກາຍ 3 ມື້ ມາຂົ້ວຈົນກວ່າໂຕໃບຊາຈະຫ່ຽວ ແລະ ລະເຫີຍນ້ຳອອກ 85-90%. ໃບຊາຈະພ້ອມແກ່ການໄປຂັ້ນຕອນຕໍ່ໄປ.</p>
+            </li>
+            <li>
+                <h3>ຂັ້ນຕອນທີ 3: ການນວດ</h3>
+                <p class="explanation">ໂດຍເຮົາຈະນຳເອົາຊາທີ່ຂົ້ວແລ້ວມານວດ ຈົນກວ່າຈະຄັ້ນນ້ຳອອກມາ ແລະເຮັດໃຫ້ໃບຊາໜຽວໂຕ ແລະ ຈັບກັນເປັນກ້ອນ ກ່ອນທີ່ຈະແຍກມັນອອກເປັນເສັ້ນໆແລ້ວເອົາໄປຂັ້ນຕອນຕໍ່ໄປ.</p>
+            </li>
+            <li>
+                <h3>ຂັ້ນຕອນທີ 5: ການອົບ</h3>
+                <p class="explanation">ການອົບຊາແມ່ນ ນຳຊາທີ່ຜ່ານຂະບວນການທັ້ງໝົດນັ້ນມາອົບໂດຍໃຊ້ເຕົາອົບຂະໜາດໃຫຍ່ ອົບຈົນກວ່າຈະແຫ້ງ ແລ້ວນຳອອກມາສູ່ຂັ້ນຕອນອື່ນໆ ເຊິ່ງບໍ່ສາມາດເປີດເຜີຍໄດ້.</p>
+            </li>
+        </ol>
+        <p class="explanation">ທັງໝົດນີ້ແມ່ນສ່ວນໜຶ່ງຂອງຂັ້ນຕອນການຜະລິດຊາຂອງພວກເຮົາ.</p>
+    </section>
+</main>
+
+<br> 
+
+<main class="content-wrapper">
+    <section class="production-process" style="font-size: larger;"">
+        <h1>ຂັ້ນຕອນການຜະລິດຊາຂອງພວກເຮົາ:</h1>
+        <h2 class="explanation" style="font-size: larger; font-weight: bold; color: red;">ການຜະລິດຊາແດງ</h2>
+        <ol>
+            <li>
+                <h3>ຂັ້ນຕອນທີ 1: ການເກັບກ່ຽວຍອດຊາ</h3>
+                <p class="explanation">ການເກັບຍອດຊາ ແມ່ນຄວນເກັບສະເພາະ 3 ໃບແລກທາງເທິງ.</p>
+            </li>
+            <li>
+                <h3>ຂັ້ນຕອນທີ 2: ການພື່ງລົມ</h3>
+                <p class="explanation">ເຮົາຈະນຳເອົາໃບຊາທີ່ເກັບມາສົດໆ ຫຼື ໄລຍະເວລາບໍ່ໃຫ້ກາຍ 3 ມື້ ມາພື່ງລົມ 1ມື້. ໃບຊາຈະພ້ອມແກ່ການໄປຂັ້ນຕອນຕໍ່ໄປ.</p>
+            </li>
+            <li>
+                <h3>ຂັ້ນຕອນທີ 3: ການນວດ</h3>
+                <p class="explanation">ໂດຍເຮົາຈະນຳເອົາຊາທີ່ພື່ງລົມແລ້ວມານວດ ຈົນກວ່າຈະຄັ້ນນ້ຳອອກມາ ແລະເຮັດໃຫ້ໃບຊາໜຽວໂຕ ແລະ ຈັບກັນເປັນກ້ອນ ກ່ອນທີ່ຈະແຍກມັນອອກເປັນເສັ້ນໆແລ້ວເອົາໄປຂັ້ນຕອນຕໍ່ໄປ.</p>
+            </li>
+            <li>
+                <h3>ຂັ້ນຕອນທີ 5: ການຕາກແດດ</h3>
+                <p class="explanation">ການອົບຊາແມ່ນ ນຳຊາທີ່ຜ່ານຂະບວນການທັ້ງໝົດນັ້ນມາຕາກແດດ ໂດບຕາກແດດຈົນກວ່າຈະແຫ້ງ ແລ້ວນຳອອກມາສູ່ຂັ້ນຕອນອື່ນໆ ເຊິ່ງບໍ່ສາມາດເປີດເຜີຍໄດ້.</p>
+            </li>
+        </ol>
+        <p class="explanation">ທັງໝົດນີ້ແມ່ນສ່ວນໜຶ່ງຂອງຂັ້ນຕອນການຜະລິດຊາຂອງພວກເຮົາ.</p>
+    </section>
+</main>
+<footer style="
+background-color: #333;
+color: #fff;
+text-align: center;
+padding: 20px;
+font-size: 0.9em;
+position: relative;
+top: 100%;
+">
+    <p>ສະຖານທີ່: ບ້ານຫຼັກ 33, ເມືອງປາກຊ່ອງ, ແຂວງຈຳປາສັກ</p>
+</footer>
+</body>
+</html>

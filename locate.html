@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="greentea.css">
+  <meta charset="UTF-8">
+  <title>My Travel Album</title>
+  <style>
+    *{
+      font-family: phetsarath OT;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .album {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .cover {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+    }
+    .photos {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .photos img {
+      width: 150px;
+      border-radius: 4px;
+    }
+    .location {
+      margin-top: 40px;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+    }
+    .c1:hover{
+      scale: 2.5;
+      transition-duration: 1.5s;
+    }
+    .c2:hover{
+      scale: 2.5;
+      transition-duration: 1.5s;
+    }
+    .c33:hover{
+      scale: 2.5;
+      transition-duration: 1.5s;
+      transition: ease-in-out 1.5s ;
+    }
+  </style>
+</head>
+<script>
+  function toggleDropdown() {
+      const content = document.getElementById("dropdownContent");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+  }
+  
+  // Optional: hide dropdown when clicking outside
+  window.onclick = function(event) {
+      const dropdown = document.querySelector(".dropdown");
+      const content = document.getElementById("dropdownContent");
+      if (!dropdown.contains(event.target)) {
+          content.style.display = "none";
+      }
+  };
+  </script>
+  
+<body>
+  <header class="site-header" style="background-color: rgb(255, 255, 255);">
+    <div class="logo"><a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">  <img src="LOGO_YARLUEM-removebg-preview.png" alt="" class="imgss"> ສວນຊາ ອົງລອງ</a></div>
+    <nav class="main-navigation">
+        <ul class="tea-navigation">
+            <li><a href="greentea.html" class="tea-nav-link active"><box-icon name='leaf' type='solid'></box-icon>ຊາຊຽວ</a></li>
+            <li><a href="white.html" class="tea-nav-link"><box-icon name='leaf' type='solid'></box-icon>ຊາຂາວ</a></li>
+            <li><a href="red.html" class="tea-nav-link red-tea"><box-icon name='leaf' type='solid'></box-icon>ຊາແດງ</a></li>
+            <li><a href="baimone.html" class="tea-nav-link mulberry-tea"><box-icon name='leaf' type='solid'></box-icon>ຊາໃບມອນ</a></li>
+        </ul>
+        <ul class="site-navigation">
+            <li><a href="product.html" class="nav-link">ການຜະລິດຊາ</a></li>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            
+        </ul>
+    </nav>
+</header>
+<img src="totoro-transparent.gif" alt="" class="market190" style="right: 0 ; position: fixed; top: 75%;background: transparent;">
+<div class="dropdown" style="position: fixed; margin-top: 7%; left: 88.5%;">
+    <button onclick="toggleDropdown()">ເພີ່ມເຕີມກ່ຽວກັບສວນຊາ</button>
+    <div class="content" id="dropdownContent">
+        <a href="contact.html">ຂ່າວສານປັດຈຸບັນ</a>
+        <a href="locate.html">ລວມຮູບພາບ ແລະ ທີ່ຕັ້ງ</a>
+        <a href="predent.html">ການປູກຕົ້ນຊາ</a>
+        <a href="brewt.html">ການຊົງຊາ</a>
+        <a href="product.html">ການຜະລິດຊາ</a>
+    </div>
+</div>
+  <header>
+    <h1>Travel with me in my garden</h1>
+    <p>A collection of memories</p>
+  </header>
+  <button type="button" class="market" style="position: fixed; margin-top: -170px ; font-family: phetsarath OT; margin-left: 1370px; z-index: 1000;";><a href="bill_calculator.html" style="text-decoration: none; color: black; z-index: 1000;" >🫖ສົນໃຈສັ່ງຊື້</a></button>
+
+  <div class="album">
+    <img class="cover" src="njo.jpg" alt="Album Cover"> <p>We will chop all the tea tree ever 3 years</p>
+
+    <div class="photos">
+      <img src="pipipi.jpg" alt="black pepper" width="40%" class="c1">
+      <img src="fill.jpg" alt=""  class="c2">
+      <img src="kijj.jpg" alt=""  class="c33">
+    </div>
+
+    <div class="location">
+      <h2>Location</h2>
+     
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d585923.5963016605!2d105.87458601340435!3d15.2554135343477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3114e1f246eaf373%3A0xfbd3b5e731a15b98!2z4Lqq4Lqn4LqZ4LqK4LqyLeC6geC6suC7gOC6n-C6reC6u-C6h-C6peC7i-C6reC6hw!5e0!3m2!1sen!2sus!4v1746296001932!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <footer style="
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  position: relative;
+  top: 100%;
+  z-index: -1;
+">
+      <p>ສະຖານທີ່: ບ້ານຫຼັກ 33, ເມືອງປາກຊ່ອງ, ແຂວງຈຳປາສັກ</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ຂໍ້ມູນການຂາຍປະຈຳວັນ</title>
+    <style>
+        body {
+            font-family: 'Phetsarath OT', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #sales-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        #sales-table th, #sales-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        #sales-table th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        #add-sale-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        #add-sale-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        #add-sale-form input[type="date"],
+        #add-sale-form input[type="text"],
+        #add-sale-form input[type="number"],
+        #add-sale-form button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            width: calc(100% - 22px);
+        }
+        #add-sale-form button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #add-sale-form button:hover {
+            background-color: #45a049;
+        }
+        #sales-summary {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #sales-summary h3 {
+            margin-top: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<script>
+    function toggleDropdown() {
+        const content = document.getElementById("dropdownContent");
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+    
+    // Optional: hide dropdown when clicking outside
+    window.onclick = function(event) {
+        const dropdown = document.querySelector(".dropdown");
+        const content = document.getElementById("dropdownContent");
+        if (!dropdown.contains(event.target)) {
+            content.style.display = "none";
+        }
+    };
+    </script>
+    
+<body>
+    <h2>ຂໍ້ມູນການຂາຍປະຈຳວັນ</h2>
+
+    <div id="add-sale-form">
+        <h3>ເພີ່ມລາຍການຂາຍ</h3>
+        <label for="sale-date">ວັນທີ:</label>
+        <input type="date" id="sale-date" name="sale-date" required>
+
+        <label for="product-name">ສິນຄ້າ:</label>
+        <input type="text" id="product-name" name="product-name" placeholder="ຊື່ສິນຄ້າ" required>
+
+        <label for="quantity-sold">ຈຳນວນ:</label>
+        <input type="number" id="quantity-sold" name="quantity-sold" min="1" value="1" required>
+
+        <label for="price-per-unit">ລາຄາຕໍ່ໜ່ວຍ:</label>
+        <input type="number" id="price-per-unit" name="price-per-unit" min="0" required>
+
+        <button onclick="addSale()">ບັນທຶກການຂາຍ</button>
+    </div>
+
+    <div id="sales-summary">
+        <h3>ສະຫຼຸບຍອດຂາຍມື້ນີ້</h3>
+        <p>ຍອດຂາຍທັງໝົດ: <span id="total-sales">0</span> ກີບ</p>
+    </div>
+
+    <table id="sales-table">
+        <thead>
+            <tr>
+                <th>ວັນທີ</th>
+                <th>ສິນຄ້າ</th>
+                <th>ຈຳນວນ</th>
+                <th>ລາຄາຕໍ່ໜ່ວຍ</th>
+                <th>ລາຄາລວມ</th>
+            </tr>
+        </thead>
+        <tbody id="sales-data-body">
+            </tbody>
+    </table>
+
+    <script>
+        let sales = []; // Array ເພື່ອເກັບຂໍ້ມູນການຂາຍ
+
+        function addSale() {
+            const saleDateInput = document.getElementById('sale-date');
+            const productNameInput = document.getElementById('product-name');
+            const quantitySoldInput = document.getElementById('quantity-sold');
+            const pricePerUnitInput = document.getElementById('price-per-unit');
+            const salesDataBody = document.getElementById('sales-data-body');
+            const totalSalesSpan = document.getElementById('total-sales');
+
+            const saleDate = saleDateInput.value;
+            const productName = productNameInput.value;
+            const quantitySold = parseInt(quantitySoldInput.value);
+            const pricePerUnit = parseFloat(pricePerUnitInput.value);
+            const totalPrice = quantitySold * pricePerUnit;
+
+            if (saleDate && productName && quantitySold > 0 && !isNaN(pricePerUnit)) {
+                const newSale = {
+                    date: saleDate,
+                    product: productName,
+                    quantity: quantitySold,
+                    price: pricePerUnit,
+                    total: totalPrice
+                };
+                sales.push(newSale);
+                updateSalesTable();
+                updateTotalSales();
+
+                // Clear form inputs
+                saleDateInput.value = '';
+                productNameInput.value = '';
+                quantitySoldInput.value = '1';
+                pricePerUnitInput.value = '';
+            } else {
+                alert('ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບຖ້ວນ ແລະຖືກຕ້ອງ.');
+            }
+        }
+
+        function updateSalesTable() {
+            const salesDataBody = document.getElementById('sales-data-body');
+            salesDataBody.innerHTML = ''; // Clear existing rows
+
+            sales.forEach(sale => {
+                const row = salesDataBody.insertRow();
+                const dateCell = row.insertCell();
+                const productCell = row.insertCell();
+                const quantityCell = row.insertCell();
+                const priceCell = row.insertCell();
+                const totalCell = row.insertCell();
+
+                dateCell.textContent = sale.date;
+                productCell.textContent = sale.product;
+                quantityCell.textContent = sale.quantity;
+                priceCell.textContent = sale.price.toLocaleString();
+                totalCell.textContent = sale.total.toLocaleString();
+            });
+        }
+
+        function updateTotalSales() {
+            const totalSalesSpan = document.getElementById('total-sales');
+            const total = sales.reduce((sum, sale) => sum + sale.total, 0);
+            totalSalesSpan.textContent = total.toLocaleString();
+        }
+
+        // ອັບເດດຕາຕະລາງເມື່ອໜ້າເວັບໂຫຼດ (ຖ້າມີຂໍ້ມູນທີ່ເກັບໄວ້)
+        updateSalesTable();
+        updateTotalSales();
+    </script>
+</body>
+</html>
